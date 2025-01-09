@@ -1,0 +1,187 @@
+\ifx\allfiles\undefined
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
+\setCJKmainfont{SimSun}
+\def\path{../config}
+\input{../config/_config}
+\begin{document}
+	% \input{../config/cover}
+	\else
+	\fi
+	%标题
+	\chapter{附录}
+	这一部分中，对于正文中因为逻辑结构无法提及的部分，进行补充。包括特殊函数，有趣的数学概念，一些命题的全新解法，以及难以推导的公式
+	证明可能使用复分析、实分析、泛函等超纲内容
+	%--------------------正文---------------------------
+	\section{欧拉-麦克劳林公式}
+		我们直观上会认为，一个连续的级数和应该可以用这一整数区间的积分来大致模拟。一些结果也的确呈现了这个特征，比如以下有关调和级数的命题：
+		
+		$\sum\limits_{n=1}^{x} \frac{1}{n} = \int_{1}^{x} \frac{1}{t}\d t +o(1)$
+		
+		特别地，其中的余项有$o(1)\to\varepsilon$,$\varepsilon$为欧拉常数.
+		
+		我们对这里的余项做探讨，探究何时可以积分和求和的差值为常数阶，以及这一余项大小如何。
+		\subsection{伯努利数}
+		\begin{para}{0}
+			\point{定义}
+			\begin{defn}{伯努利数的级数定义}{}
+				符合以下级数展开的数列称为伯努利数：
+				\begin{equation}
+					\frac{z}{e^z -1} = \sum_{n=0}^{\infty}\frac{B_n}{n!}z^n
+				\end{equation}
+			\end{defn}
+			以上的定义十分简洁，但是难以计算。但是显然，借助Taylor级数我们可以推导出等价的递归定义：
+			\begin{defn}{伯努利数的递归定义}{}
+				\begin{equation}
+					B_0=1,B_n=-\frac{1}{n+1}\sum\limits_{k=0}^{n-1}\binom{n+1}{k}B_{k}
+				\end{equation}
+			\end{defn}
+			\begin{proof}
+				利用级数定义中的展开式反推：
+				
+				$\because\left(e^z-1\right)\left(\frac{z}{e^z-1}\right)=z$
+				
+				$\therefore z\left[\frac{1}{1!}+\frac{1}{2!}z+...\cdots+\frac{1}{(n+1)!}z^n+R_1(z)\right]\left[B_0+B_1 z+\cdots+\frac{B_n}{n!}z^n+R_2(z)\right]=z$
+				
+				对比常数项可知：$B_0=1$
+				进一步，如果n大于1，对比系数可得：
+				$B_0\cdot\frac{1}{(n+1)!}+B_1\cdot\frac{1}{n!}+\cdots+B_k\cdot\frac{1}{k!}\cdot\frac{1}{(n-k)!}\cdots\frac{B_n}{n!}\cdot\frac{1}{1!}=0$
+				
+				左右同乘$(n+1)!$，得：
+				$B_0\cdot\frac{(n+1)!}{(n+1)!\cdot 0!}+B_1\cdot\frac{(n+1)!}{n!\cdot 1!}+\cdots+B_k\frac{(n+1)!}{k!\cdot (n-k)!}+\cdots+B_n\cdot\frac{(n+1)!}{n!\cdot1!}=0$
+				
+				$\Rightarrow \sum\limits_{k=0}{n} \binom{n+1}{k}B_k=0$
+				
+				$\Rightarrow \sum\limits_{k=0}{n-1} \binom{n+1}{k}B_k=-(n+1)B_n$
+				
+				$\Rightarrow B_n=-\frac{1}{n+1}\sum\limits_{k=0}^{n-1}\binom{n+1}{k}B_{k}$
+				
+			\end{proof}
+			\point{性质}
+				\begin{para}{1}
+					\point{除1外，所有奇数项的伯努利数为0}
+					\begin{proposition}
+						$B_{2n+1}=\begin{cases}
+								0,n\geqslant 1 \\
+								-\frac{1}{2},n=0 
+							\end{cases}$
+					\end{proposition}
+					\begin{proof}
+						由前面的伯努利数定义可知，$f(z)=\frac{z}{e^z-1}$在$\C-\{0\}$上解析
+						
+						考虑函数$\phi(x)=\frac{f(z)}{z^{2n+2}}$的洛朗展开
+						
+						$\phi(z)=\frac{B_0}{0!}z^{-2n-2}+\cdots+\frac{B_{2n+1}}{(2n+1)!}z^{-1}+\cdots$
+						
+						$\Rightarrow Res_{z=0}\phi(z)=\frac{B_{2n+1}}{(2n+1)!}$
+						
+						$\Rightarrow \oint_{C} \phi(z) \d z = 2\pi i\cdot \frac{B_{2n+1}}{(2n+1)!}$,其中$C=\{|z|=1\}$
+						
+						记上述积分为$I$，做代换$z=e^{i\theta},\theta\in[0,2\pi]$
+						
+						$I=\int_{0}^{2\pi} i e^{i\theta}\frac{e^{i\theta}}{e^{e^{i\theta}}-1}e^{-(2n+2)i\theta} \d \theta$
+						
+						$=\int_{0}^{2\pi} \frac{e^{-2ni\theta}}{e^{e^{i\theta}}-1}\d\theta$
+						
+						$=\int_{0}^{\pi} \frac{e^{-2ni\theta}}{e^{e^{i\theta}}-1}\d\theta+\int_{\pi}^{2\pi} \frac{e^{-2ni\theta}}{e^{e^{i\theta}}-1}\d\theta$
+						
+						$=\int_{0}^{\pi} \frac{e^{-2ni\theta}}{e^{e^{i\theta}}-1}\d\theta+\int_{\pi}^{2\pi} \frac{e^{-2ni\theta+2n\pi i}}{e^{e^{i\theta}}-1}\d\theta$
+						
+						作代换$\alpha = \theta-\pi$，并利用标准指数函数在虚轴的半个周期上变号，得到：
+						
+						$=\int_{0}^{\pi} \frac{e^{-2ni\theta}}{e^{e^{i\theta}}-1}\d\theta+\int_{0}^{\pi} \frac{e^{-2ni\alpha+2n\pi i}}{e^{-e^{i\alpha}}-1}\d\alpha$
+						
+						$=\int_{0}^{\pi} -e^{-2ni\theta}=\begin{cases}
+							0,n \geqslant 0 \\
+							-\pi,n=0
+						\end{cases}$
+						
+						$\Rightarrow B_{2n+1}=\begin{cases}
+							0,n\geqslant 1 \\
+							-\frac{1}{2},n=0 
+						\end{cases}$
+					\end{proof}
+					\point{自然幂指数和的通式}
+					\begin{proposition}
+						$S_p(n)=\sum\limits_{k=1}^{n}k^p=\frac{1}{p+1}\sum\limits_{i=0}^{p} (-1)^i B_i \binom{p+1}{i} n^{p+1-i}$
+					\end{proposition}
+					\begin{proof}
+						明天再说，累了
+					\end{proof}
+					\point{}
+					\begin{proposition}
+						$B_n=-n\zeta(1-n),n\geqslant 1$
+					\end{proposition}
+					
+					\begin{proof}
+						黎曼Zeta函数的定义为；
+						
+						$\zeta(s)=\begin{cases}
+							\sum\limits_{k=1}^{\infty}\frac{1}{k^s},Re(s)>1 \\
+							\frac{1}{1-2^{1-s}}\sum\limits_{k=1}^{\infty}\frac{(-1)^{k+1}}{k^s},0< Re(s) \leqslant 1 \\
+							2^s \pi^{s-1} \sin\left(\frac{\pi s}{2}\right)\Gamma(1-s)\zeta(1-s),Re(s)\leqslant 0
+						\end{cases}$
+						
+						解析延拓过程可以参考《复分析笔记》
+						
+						先考虑$n=2k+1,k>0$的情形，此时依Zeta函数定义，$\zeta(-2k)=0$，因为$\sin(n\pi)=0$，命题成立。
+						
+						而当$n=1$，$\zeta(0)=-\frac{1}{2},B_1=-\frac{1}{2}$，命题成立。
+						
+						接下来考虑n为偶数的情形：
+						
+						我们注意到，在余切函数的展开式中，恰好包含求和、位于分母的n这两种形式，通过Taylor展开可以组成我们期望的Zeta函数形式：
+						
+						
+					\end{proof}
+				\end{para}
+			\begin{them}{欧拉-麦克劳林公式}{}
+				假设$f(x)$无穷阶可导，那么：
+				\begin{equation}
+					\sum\limits_{a\leq n<b}f(n) = \int_{a}^{b}f(x)\d x+\sum\limits_{k=1}^{\infty}\frac{B_k}{k!}f^{(k-1)}(x)\big|_{a}^{b}+{(-1)}^{m}\int_{a}^{b}\frac{B_m({x})}{m!}f^{(m)}(x)\d x
+				\end{equation}
+				
+			\end{them}
+		\end{para}
+		\subsection{伯努利多项式}
+		\begin{para}{0}
+			\point{定义}
+			\begin{defn}{伯努利多项式的级数定义}{}
+				满足以下级数的函数族$B_n(x)$称为伯努利多项式
+				\begin{equation}
+					\frac{z e^{xz}}{e^z-1}=\sum\limits_{n=0}^{\infty} \frac{B_n(x)}{n!}z^n
+				\end{equation}
+			\end{defn}
+		\end{para}
+	
+	%附录：其他四种三角函数的泰勒展开
+	\section{其他四种三角函数的泰勒展开}
+		\subsection{$\tan x$}
+			\begin{them}{正切函数的Taylor展开}{}
+				\begin{equation}
+					\tan x = \sum\limits_{n=1}^{\infty} \frac{(-1)^{n-1}2^{2n}(2^{2n}-1)B_{2n}}{(2n)!}x^{2n-1}
+				\end{equation}
+			\end{them}
+			\begin{proof}
+				怎么开始套娃了（恼）
+			\end{proof}
+	
+	%附录：不定积分初等性判定
+	\section{原函数初等性的判定方法}
+		\subsection{切比雪夫定理}
+			\begin{them}{切比雪夫定理}{}
+				设$m,n,p\in \Q-\{0\}$，那么以下积分
+				\begin{equation}
+					\int x^m(a+bx^n)^p \d x
+				\end{equation}
+				初等的充要条件是：$p,\frac{m+1}{n},\frac{m+1}{n}+p$中至少有一个为整数
+			\end{them}
+		\subsection{刘维尔定理}
+	
+	%附录：超越积分的特殊解法
+	\section{一些超越积分的特殊解法}
+		\subsection{Direchlet积分}
+		
+	
+	\ifx\allfiles\undefined
+\end{document}
+\fi
