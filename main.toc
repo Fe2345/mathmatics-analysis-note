@@ -1,13 +1,17 @@
 \contentsline {chapter}{\numberline {第一章\hspace {.3em}}一些通用的数学概念和记号}{0}{chapter.1}%
 \contentsline {section}{\numberline {1.1}逻辑符号}{0}{section.1.1}%
-\contentsline {chapter}{\numberline {第二章\hspace {.3em}}附录}{1}{chapter.2}%
-\contentsline {section}{\numberline {2.1}欧拉-麦克劳林公式}{1}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}伯努利数}{1}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}伯努利多项式}{4}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}其他四种三角函数的泰勒展开}{4}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}$\tan x$}{4}{subsection.2.2.1}%
-\contentsline {section}{\numberline {2.3}原函数初等性的判定方法}{5}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}切比雪夫定理}{5}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}刘维尔定理}{5}{subsection.2.3.2}%
-\contentsline {section}{\numberline {2.4}一些超越积分的特殊解法}{5}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Direchlet积分}{5}{subsection.2.4.1}%
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}一致收敛性、函数项级数与函数族的基本运算}{1}{chapter.2}%
+\contentsline {section}{\numberline {2.1}逐点收敛性和一致收敛性}{1}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}逐点收敛性}{1}{subsection.2.1.1}%
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}附录}{2}{chapter.3}%
+\contentsline {section}{\numberline {3.1}欧拉-麦克劳林公式}{2}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}伯努利数}{2}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}伯努利多项式}{5}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}其他四种三角函数的泰勒/洛朗展开}{5}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}$\cot x$}{5}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}$\tan x$}{6}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}原函数初等性的判定方法}{7}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}切比雪夫定理}{7}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}刘维尔定理}{7}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}一些超越积分的特殊解法}{7}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Direchlet积分}{7}{subsection.3.4.1}%

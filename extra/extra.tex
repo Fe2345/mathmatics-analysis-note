@@ -154,7 +154,61 @@
 		\end{para}
 	
 	%附录：其他四种三角函数的泰勒展开
-	\section{其他四种三角函数的泰勒展开}
+	\section{其他四种三角函数的泰勒/洛朗展开}
+		\subsection{$\cot x$}
+			借助伯努利数或者Gamma函数，分别可以将余切分解为两种形式
+			\begin{them}{余切函数的洛朗展开}{}
+				\begin{equation}
+					\cot x = \sum\limits_{n=0}^{\infty}\frac{2(-1)^n B_{2n} (2x)^{2n-1}}{(2n)!}
+				\end{equation}
+				这一展开是$\cot x$的洛朗展开而非泰勒展开，因为$\cot x \sim \frac{1}{x},x\to 0$，在0处不解析
+			\end{them}
+			\begin{proof}
+				依余切函数定义：
+				$\cot x = \frac{i(e^{ix}+e^{-ix})}{e^{ix}-e^{-ix}}$
+				
+				$=i\frac{e^{2ix}+1}{e^{2ix}-1}$
+				
+				$=i\left(1+\frac{2}{e^{2ix}-1}\right)$
+				再利用伯努利数的级数定义：
+				
+				$\cot x = i+2i\cdot \frac{1}{2ix} \sum\limits_{n=0}^{\infty} \frac{B_n (2ix)^n}{n!}$
+				
+				$\cot x = i+2i\sum\limits_{n=0}^{\infty} \frac{B_n (2ix)^{n-1}}{n!}$
+				因为伯努利数的奇数项只有$B_1=-\frac{1}{2}$，其余全为0，故：
+				
+				$\cot x = i+2i\left(\sum_{n=0}^{\infty} \frac{B_2n (2ix)^2n-1}{2n!} -\frac{1}{2}\right)$
+				
+				$=\sum\limits_{n=0}^{\infty} \frac{2 B_{2n} (i)^{2n} (2x)^{2n-1}}{2n!}$
+				$=\sum\limits_{n=0}^{\infty}\frac{2(-1)^n B_{2n} (2x)^{2n-1}}{(2n)!}$
+			\end{proof}
+			\begin{them}{余切函数的第二种级数展开}{}
+				\begin{equation}
+					\cot z = \frac{1}{z}+\sum\limits_{n=0}^{\infty} \left(\frac{1}{z-n\pi}+\frac{1}{z+n\pi}\right)
+				\end{equation}
+			\end{them}
+			\begin{proof}
+				利用正弦函数的无穷乘积展开式：
+				
+				$\sin \pi z = \pi z \prod\limits_{n=1}^{\infty} \left(1-\frac{z^2}{n^2}\right)$
+				
+				将$\pi z$移至左侧并取对数，得：
+				
+				$\ln \frac{\sin \pi z}{\pi z} = \sum\limits_{n=1}^{\infty} \ln \left(1-\frac{z^2}{n^2}\right)$
+				
+				双侧求导，得：
+				
+				$\frac{\pi z}{\sin \pi z}\left(\frac{\cos \pi z}{z}-\frac{\sin \pi z}{\pi z^2}\right) = \sum\limits_{n=1}^{\infty} \frac{-2z}{n^2 (1-\frac{z^2}{n^2})}$
+				
+				进行一些基本运算并对级数内部裂项，得：
+				
+				$\pi \cot \pi z = \frac{1}{z}+\sum\limits_{n=1}^{\infty}\left(\frac{1}{z-n}+\frac{1}{z+n}\right)$
+				
+				$\Rightarrow \cot \pi z = \frac{1}{\pi z}+\sum\limits_{n=1}^{\infty}\left(\frac{1}{\pi z-\pi n}+\frac{1}{\pi z+\pi n}\right)$
+				
+				$\Rightarrow \cot z = \frac{1}{z}+\sum\limits_{n=0}^{\infty} \left(\frac{1}{z-n\pi}+\frac{1}{z+n\pi}\right)$
+			\end{proof}
+			这一证明的注意力很强，其整体思路是：将$\cot$转换为$\cos$和$\sin$的除法，再利用正弦函数的导数，构造相应的对数除式，而恰好注意到，$\sin z$的无穷乘积展开正适合构造对数求和。
 		\subsection{$\tan x$}
 			\begin{them}{正切函数的Taylor展开}{}
 				\begin{equation}
