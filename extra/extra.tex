@@ -12,58 +12,61 @@
 	这一部分中，对于正文中因为逻辑结构无法提及的部分，进行补充。包括特殊函数，有趣的数学概念，一些命题的全新解法，以及难以推导的公式
 	证明可能使用复分析、实分析、泛函等超纲内容
 	%--------------------正文---------------------------
-	\section{欧拉-麦克劳林公式}
-		我们直观上会认为，一个连续的级数和应该可以用这一整数区间的积分来大致模拟。一些结果也的确呈现了这个特征，比如以下有关调和级数的命题：
+	
+	%附录：伯努利数和欧拉数
+	\section{伯努利数与欧拉数}
+		在对泰勒公式的研究中，我们推到了标准指数函数$\exp x$的级数展开，它的系数是极其容易推导的。
 		
-		$\sum\limits_{n=1}^{x} \frac{1}{n} = \int_{1}^{x} \frac{1}{t}\d t +o(1)$
+		但是，如果我们考察其倒数，那么就变得相当难以推导：因为它的高阶导数一阶比一阶难以求得。
 		
-		特别地，其中的余项有$o(1)\to\varepsilon$,$\varepsilon$为欧拉常数.
+		这一附录中我们反其道而行之，先假设系数，再利用其与指数函数乘积求出系数，从而提出了两个重要的数列：伯努利数和欧拉数。
 		
-		我们对这里的余项做探讨，探究何时可以积分和求和的差值为常数阶，以及这一余项大小如何。
+		特别地，由于三角函数的分析定义正是利用的指数函数，利用伯努利数和欧拉数可以求出很多之前难以求出的展开式。
+		
 		\subsection{伯努利数}
-		\begin{para}{0}
-			\point{定义}
-			\begin{defn}{伯努利数的级数定义}{}
-				符合以下级数展开的数列称为伯努利数：
-				\begin{equation}
-					\frac{z}{e^z -1} = \sum_{n=0}^{\infty}\frac{B_n}{n!}z^n
-				\end{equation}
-			\end{defn}
-			以上的定义十分简洁，但是难以计算。但是显然，借助Taylor级数我们可以推导出等价的递归定义：
-			\begin{defn}{伯努利数的递归定义}{}
-				\begin{equation}
-					B_0=1,B_n=-\frac{1}{n+1}\sum\limits_{k=0}^{n-1}\binom{n+1}{k}B_{k}
-				\end{equation}
-			\end{defn}
-			\begin{proof}
-				利用级数定义中的展开式反推：
-				
-				$\because\left(e^z-1\right)\left(\frac{z}{e^z-1}\right)=z$
-				
-				$\therefore z\left[\frac{1}{1!}+\frac{1}{2!}z+...\cdots+\frac{1}{(n+1)!}z^n+R_1(z)\right]\left[B_0+B_1 z+\cdots+\frac{B_n}{n!}z^n+R_2(z)\right]=z$
-				
-				对比常数项可知：$B_0=1$
-				进一步，如果n大于1，对比系数可得：
-				$B_0\cdot\frac{1}{(n+1)!}+B_1\cdot\frac{1}{n!}+\cdots+B_k\cdot\frac{1}{k!}\cdot\frac{1}{(n-k)!}\cdots\frac{B_n}{n!}\cdot\frac{1}{1!}=0$
-				
-				左右同乘$(n+1)!$，得：
-				$B_0\cdot\frac{(n+1)!}{(n+1)!\cdot 0!}+B_1\cdot\frac{(n+1)!}{n!\cdot 1!}+\cdots+B_k\frac{(n+1)!}{k!\cdot (n-k)!}+\cdots+B_n\cdot\frac{(n+1)!}{n!\cdot1!}=0$
-				
-				$\Rightarrow \sum\limits_{k=0}{n} \binom{n+1}{k}B_k=0$
-				
-				$\Rightarrow \sum\limits_{k=0}{n-1} \binom{n+1}{k}B_k=-(n+1)B_n$
-				
-				$\Rightarrow B_n=-\frac{1}{n+1}\sum\limits_{k=0}^{n-1}\binom{n+1}{k}B_{k}$
-				
-			\end{proof}
-			\point{性质}
+			\begin{para}{0}
+				\point{定义}
+				\begin{defn}{伯努利数的级数定义}{}
+					符合以下级数展开的数列称为伯努利数：
+					\begin{equation}
+						\frac{z}{e^z -1} = \sum_{n=0}^{\infty}\frac{B_n}{n!}z^n
+					\end{equation}
+				\end{defn}
+				以上的定义十分简洁，但是难以计算。但是显然，借助Taylor级数我们可以推导出等价的递归定义：
+				\begin{defn}{伯努利数的递归定义}{}
+					\begin{equation}
+						B_0=1,B_n=-\frac{1}{n+1}\sum\limits_{k=0}^{n-1}\binom{n+1}{k}B_{k}
+					\end{equation}
+				\end{defn}
+				\begin{proof}
+					利用级数定义中的展开式反推：
+					
+					$\because\left(e^z-1\right)\left(\frac{z}{e^z-1}\right)=z$
+					
+					$\therefore z\left[\frac{1}{1!}+\frac{1}{2!}z+...\cdots+\frac{1}{(n+1)!}z^n+R_1(z)\right]\left[B_0+B_1 z+\cdots+\frac{B_n}{n!}z^n+R_2(z)\right]=z$
+					
+					对比常数项可知：$B_0=1$
+					进一步，如果n大于1，对比系数可得：
+					$B_0\cdot\frac{1}{(n+1)!}+B_1\cdot\frac{1}{n!}+\cdots+B_k\cdot\frac{1}{k!}\cdot\frac{1}{(n-k)!}\cdots\frac{B_n}{n!}\cdot\frac{1}{1!}=0$
+					
+					左右同乘$(n+1)!$，得：
+					$B_0\cdot\frac{(n+1)!}{(n+1)!\cdot 0!}+B_1\cdot\frac{(n+1)!}{n!\cdot 1!}+\cdots+B_k\frac{(n+1)!}{k!\cdot (n-k)!}+\cdots+B_n\cdot\frac{(n+1)!}{n!\cdot1!}=0$
+					
+					$\Rightarrow \sum\limits_{k=0}^{n} \binom{n+1}{k}B_k=0$
+					
+					$\Rightarrow \sum\limits_{k=0}^{n-1} \binom{n+1}{k}B_k=-(n+1)B_n$
+					
+					$\Rightarrow B_n=-\frac{1}{n+1}\sum\limits_{k=0}^{n-1}\binom{n+1}{k}B_{k}$
+					
+				\end{proof}
+				\point{性质}
 				\begin{para}{1}
 					\point{除1外，所有奇数项的伯努利数为0}
 					\begin{proposition}
 						$B_{2n+1}=\begin{cases}
-								0,n\geqslant 1 \\
-								-\frac{1}{2},n=0 
-							\end{cases}$
+							0,n\geqslant 1 \\
+							-\frac{1}{2},n=0 
+						\end{cases}$
 					\end{proposition}
 					\begin{proof}
 						由前面的伯努利数定义可知，$f(z)=\frac{z}{e^z-1}$在$\C-\{0\}$上解析
@@ -100,13 +103,6 @@
 							-\frac{1}{2},n=0 
 						\end{cases}$
 					\end{proof}
-					\point{自然幂指数和的通式}
-					\begin{proposition}
-						$S_p(n)=\sum\limits_{k=1}^{n}k^p=\frac{1}{p+1}\sum\limits_{i=0}^{p} (-1)^i B_i \binom{p+1}{i} n^{p+1-i}$
-					\end{proposition}
-					\begin{proof}
-						明天再说，累了
-					\end{proof}
 					\point{}
 					\begin{proposition}
 						$B_n=-n\zeta(1-n),n\geqslant 1$
@@ -129,19 +125,99 @@
 						
 						接下来考虑n为偶数的情形：
 						
-						我们注意到，在余切函数的展开式中，恰好包含求和、位于分母的n这两种形式，通过Taylor展开可以组成我们期望的Zeta函数形式：
+						我们欲证$B_{2n} = -2n\zeta(1-2n)$
 						
+						$\Rightarrow B_{2n} = -2n 2^{1-2n} \pi^{-2n} \sin\left(\frac{\pi (1-2n)}{2}\right)\Gamma(2n)\zeta(2n)$
 						
+						考虑函数$f_n(z) = \frac{z^{-2n}}{e^z -1}$
+						
+						$=z^{-2n-1}\frac{z}{e^z-1}$
+						
+						$=z^{-2n-1}\sum\limits_{k=0}^{\infty} \frac{B_k}{k!}x^k$
+						
+						$=\sum\limits_{k=0}^{\infty} \frac{B_k}{k!}x^{k-2n-1}$
+						
+						对比-1阶系数，得：
+						
+						$Res_{z=0} f_n(z) = \frac{B_{2n}}{(2n)!}$
+						
+						再考虑$z=2\pi ki$处的留数
+						
+						$Res_{z=2\pi ki} f_n(z) = \lim\limits_{z\to 2\pi ni} \frac{z^{-2n}}{e^z-1}(z-2\pi ki)$
+						
+						$=(2\pi ki)^{-2n}=(-1)^n (2\pi k)^{-2n}$
+						
+						记$C_N = \{|z|=(2N+1)\pi\}$，$G_N$为$C_0,C_N$围成的区域
+						
+						$\therefore \int_{\partial G_N} f_n(z)=\int_{C_N} f_n(z)-\int_{C_0} f_n(z)$
+						
+						而$\int_{\partial G_N} = 2\pi i \sum\limits_{k=-N}^{N} Res_{z=2\pi ki} f_n(z)$
+						
+						$=2\pi i \sum\limits_{k=-N}^{N} (-1)^n (2\pi k)^{-2n}$
+						
+						$=4\pi i \sum\limits_{k=1}^{N} (-1)^n (2\pi k)^{-2n}$
+						
+						接下来考察$\int_{C_N} f_n(z)$，因为在$C_N$上$|\frac{1}{e^z-1}|$有界，而：
+						
+						$\int_{C_N} z^{-2n} = \int_{C_N} i e^{i\theta} N^{-2n} = O(N^{-2n})$
+						
+						所以$\int_{C_N} f_n(z) = O(N^{-2n})$
+						
+						再接下来考察$\int_{C_0} f_n(z)$
+						
+						$\int_{C_0} f_n(z) = 2\pi i Res_{z=0} f_n(z) = \frac{2\pi i B_{2n}}{(2n)!}$
+						
+						$\because \int_{\partial G_N} f_n(z)=\int_{C_N} f_n(z)-\int_{C_0} f_n(z)$
+						
+						$\therefore 4\pi i \sum\limits_{k=1}^{N} (-1)^n (2\pi k )^{-2n} = O(N^{-2n})-2\pi i\frac{2\pi i B_{2n}}{(2n)!}$
+						
+						取$N\to +\infty$，那么$\sum\limits_{k=1}^{\infty} 2(-1)^n (2\pi k)^{-2n}=-\frac{B_{2n}}{(2n)!}$
+						
+						$\Rightarrow B_{2n} = (2n)!\sum\limits_{k=1}^{\infty} 2(-1)^{n+1} (2\pi k)^{-2n}$
+						
+						$\Rightarrow B_{2n} = (2n)!\frac{2(-1)^{n+1}}{(2\pi)^{2n}}\sum\limits_{k=1}^{\infty} \frac{1}{k^{2n}}$
+						
+						$\Rightarrow B_{2n} = (2n)!\frac{2(-1)^{n+1}}{(2\pi)^{2n}}\zeta(2n)$
+						
+						$\Rightarrow B_{2n} = 2n (-1)^{n+1} 2^{1-2n} \pi^{-2n} \Gamma(2n)\zeta(2n)$
+						
+						只需注意到，$(-1)^{n+1}=-\sin\left(\frac{(1-2n)\pi}{2}\right)$，那么这一结果就是我们所证的命题。
+					\end{proof}
+					这一证明的关键在于注意到$\frac{z^{-2n}}{e^z-1}$在$0$处的留数与伯努利数有关，而其他奇点处的留数之和与自然数负幂求和有关，从而联系了伯努利数和Zeta函数。
+					\point{伯努利数偶数项相互交错}
+						\begin{proposition}
+							$B_{4k} < 0,B_{4k+2} > 0,k \geqslant 1$
+						\end{proposition}
+						\begin{proof}
+							我们利用之前命题中的结果$B_{2n} = (2n)!\frac{2(-1)^{n+1}}{(2\pi)^{2n}}\zeta(2n)$
+							
+							当n分别为$2k,2k+1$时：
+							
+							$B_{4k} = (4k)!\frac{2(-1)^{2k+1}}{(2\pi)^{4k}}\zeta(4k)=-(4k)!\frac{2}{(2\pi)^{4k}}\zeta(4k)$
+							
+							$B_{4k+2} = (4k+2)!\frac{2(-1)^{2k+2}}{(2\pi)^{4k+2}}\zeta(4k+2)=(4k+2)!\frac{2}{(2\pi)^{4k+2}}\zeta(4k+2)$
+							
+							而Zeta函数对于全体正整数取正值，命题得证。
+						\end{proof}
+					\point{自然幂指数和的通式}
+					\begin{proposition}
+						$S_p(n)=\sum\limits_{k=1}^{n}k^p=\frac{1}{p+1}\sum\limits_{i=0}^{p} (-1)^i B_i \binom{p+1}{i} n^{p+1-i}$
+					\end{proposition}
+					\begin{proof}
+						明天再说，累了
 					\end{proof}
 				\end{para}
-			\begin{them}{欧拉-麦克劳林公式}{}
-				假设$f(x)$无穷阶可导，那么：
-				\begin{equation}
-					\sum\limits_{a\leq n<b}f(n) = \int_{a}^{b}f(x)\d x+\sum\limits_{k=1}^{\infty}\frac{B_k}{k!}f^{(k-1)}(x)\big|_{a}^{b}+{(-1)}^{m}\int_{a}^{b}\frac{B_m({x})}{m!}f^{(m)}(x)\d x
-				\end{equation}
-				
-			\end{them}
-		\end{para}
+			\end{para}
+		\subsection{欧拉数}
+	% 附录：欧拉-麦克劳林公式
+	\section{欧拉-麦克劳林公式}
+		我们直观上会认为，一个连续的级数和应该可以用这一整数区间的积分来大致模拟。一些结果也的确呈现了这个特征，比如以下有关调和级数的命题：
+		
+		$\sum\limits_{n=1}^{x} \frac{1}{n} = \int_{1}^{x} \frac{1}{t}\d t +o(1)$
+		
+		特别地，其中的余项有$o(1)\to\varepsilon$,$\varepsilon$为欧拉常数.
+		
+		我们对这里的余项做探讨，探究何时可以积分和求和的差值为常数阶，以及这一余项大小如何。
 		\subsection{伯努利多项式}
 		\begin{para}{0}
 			\point{定义}
@@ -152,6 +228,13 @@
 				\end{equation}
 			\end{defn}
 		\end{para}
+		\begin{them}{欧拉-麦克劳林公式}{}
+			假设$f(x)$无穷阶可导，那么：
+			\begin{equation}
+				\sum\limits_{a\leq n<b}f(n) = \int_{a}^{b}f(x)\d x+\sum\limits_{k=1}^{\infty}\frac{B_k}{k!}f^{(k-1)}(x)\big|_{a}^{b}+{(-1)}^{m}\int_{a}^{b}\frac{B_m({x})}{m!}f^{(m)}(x)\d x
+			\end{equation}
+			
+		\end{them}
 	
 	%附录：其他四种三角函数的泰勒展开
 	\section{其他四种三角函数的泰勒/洛朗展开}
@@ -215,6 +298,29 @@
 					\tan x = \sum\limits_{n=1}^{\infty} \frac{(-1)^{n-1}2^{2n}(2^{2n}-1)B_{2n}}{(2n)!}x^{2n-1}
 				\end{equation}
 			\end{them}
+			\begin{proof}
+				注意到：$\cot x = -2 \cot 2x +\cot x$
+				
+				因为：$-2\cot 2x+\cot x = -2\frac{\cos 2x}{\sin 2x}+\frac{\cos x}{\sin x}$
+				
+				$=-\frac{\cos^2 x-\sin^2 x}{\sin x\cos x}+\frac{\cos x}{\sin x}$
+				
+				$=\frac{\sin^2 x-\cos^2 x}{\sin x\cos x}+\frac{\cos^2 x}{\sin x\cos x}$
+				
+				$=\frac{\sin^2 x}{\sin x\cos x}$
+				
+				$=\frac{\sin x}{\cos x}=\cot x$
+				
+				$\therefore \cot x = -2\sum\limits_{n=0}^{\infty}\frac{2(-1)^n B_{2n} (4x)^{2n-1}}{(2n)!}+\sum\limits_{n=0}^{\infty}\frac{2(-1)^n B_{2n} (2x)^{2n-1}}{(2n)!} $
+				
+				$=-\sum\limits_{n=0}^{\infty}\frac{2(-1)^n B_{2n} (1-2^{2n}) (2x)^{2n-1}}{(2n)!}$
+				
+				$=\sum\limits_{n=0}^{\infty}\frac{(-1)^{n-1} B_{2n} 2^{2n}(2^{2n}-1) x^{2n-1}}{(2n)!}$
+				
+				又当$n=0$时一般项为0，
+				
+				$\therefore \cot x = \sum\limits_{n=1}^{\infty}\frac{(-1)^{n-1} 2^{2n}(2^{2n}-1) B_{2n}}{(2n)!}  x^{2n-1}$
+			\end{proof}
 			\begin{proof}
 				怎么开始套娃了（恼）
 			\end{proof}

@@ -4,14 +4,16 @@
 \contentsline {section}{\numberline {2.1}逐点收敛性和一致收敛性}{1}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}逐点收敛性}{1}{subsection.2.1.1}%
 \contentsline {chapter}{\numberline {第三章\hspace {.3em}}附录}{2}{chapter.3}%
-\contentsline {section}{\numberline {3.1}欧拉-麦克劳林公式}{2}{section.3.1}%
+\contentsline {section}{\numberline {3.1}伯努利数与欧拉数}{2}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}伯努利数}{2}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}伯努利多项式}{5}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}其他四种三角函数的泰勒/洛朗展开}{5}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}$\cot x$}{5}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}$\tan x$}{6}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}原函数初等性的判定方法}{7}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}切比雪夫定理}{7}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}刘维尔定理}{7}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}一些超越积分的特殊解法}{7}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Direchlet积分}{7}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.1.2}欧拉数}{6}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}欧拉-麦克劳林公式}{6}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}伯努利多项式}{6}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}其他四种三角函数的泰勒/洛朗展开}{7}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}$\cot x$}{7}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}$\tan x$}{8}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}原函数初等性的判定方法}{9}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}切比雪夫定理}{9}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}刘维尔定理}{9}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}一些超越积分的特殊解法}{9}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Direchlet积分}{9}{subsection.3.5.1}%
