@@ -13,6 +13,171 @@
 	证明可能使用复分析、实分析、泛函等超纲内容
 	%--------------------正文---------------------------
 	
+	%附录：R，R^m，R^infty的比较
+	\section{\texorpdfstring{$\R,\R^m,\R^\infty$}势的比较，皮亚诺曲线}
+		\subsection{约定的记号}
+			本节中引入以下全新的记号：
+			\begin{para}{0}
+				\point{$X^Y$}
+					\begin{defn}{}{}
+						$X^Y := \{f| f:Y \rightarrow X\}$
+						
+						即$Y$到$X$的全体映射的集合
+					\end{defn}
+				\point{$X^\infty$}
+					\begin{defn}{}{}
+						$X^\infty := \{\{a_n\}| a_i\in X\}$
+						
+						即元素为$X$中元素的全体点列的集合
+					\end{defn}
+					可见，$X^\infty$就是$X^Y$在$Y=\N$下的特例，也就是$X^{\infty}=X^{\N}$
+				\point{$\mathscr{P}(A)$}
+					\begin{defn}{}{}
+						$\mathscr{P}(A) = \{V|V \subseteq A\}$
+						
+						即$A$的全体子集组成的集合
+					\end{defn}
+			\end{para}
+			
+		\subsection{\texorpdfstring{$\R,\R^m,\R^\infty$}势的比较}
+			我们将证明：$Card \R = Card \R^m = Card \R^\infty$
+			
+			我们的证明过程会按照此交换图顺序。
+			\[\begin{tikzcd}
+				&& {(0,1)} \\
+				& {\mathbb{R}} & {[0,1]} & {\{0,1\}^{\infty}} & {\mathscr{P}(\mathbb{N})} \\
+				{\mathbb{R}^m} & {\mathbb{R}^\infty} & {[0,1]^\infty} & {\left(\{0,1\}^{\infty}\right)^\infty} & {\mathscr{P}(\mathbb{Q})}
+				\arrow["{Lemma2}", from=1-3, to=2-3]
+				\arrow["{Lemma1}", from=2-2, to=1-3]
+				\arrow["{Proposition2}"', from=2-2, to=3-1]
+				\arrow["{Proposition1}", leftrightarrow, from=2-2, to=3-2]
+				\arrow["{Lemma3}"', from=2-3, to=2-4]
+				\arrow["{Lemma4}", from=2-4, to=2-5]
+				\arrow["{Lemma5}", from=2-5, to=3-5]
+				\arrow["{Proposition2}", from=3-2, to=3-1]
+				\arrow["{Lemma6}", from=3-3, to=3-2]
+				\arrow["{Lemma6}", from=3-4, to=3-3]
+				\arrow["{Lemma4}", from=3-5, to=3-4]
+			\end{tikzcd}\]
+			
+			\begin{lemma}{引理1}{}
+				$Card \R = Card (0,1)$
+			\end{lemma}
+			\begin{proof}
+				考虑以下映射$f(x)=\frac{1}{1+e^{-x}}$
+				
+				这个函数显然单调增，所以是单射；满射通过单调性和$\lim\limits_{x\to - \infty}=0,\lim\limits_{x\to +\infty}=1$可知
+			\end{proof}
+			\begin{lemma}{引理2}{}
+				$Card (0,1) = Card [0,1]$
+			\end{lemma}
+			\begin{proof}
+				考虑以下$[0,1]\rightarrow(0,1)$映射$f(x)=\begin{cases}
+					\frac{1}{2},x=0 \\
+					\frac{1}{3},x=1 \\
+					\frac{1}{n+2},x=\frac{1}{n},n>1 \\
+					x,x\neq 0,x\neq 1,x\neq \frac{1}{n},n>1
+					\end{cases}$
+					
+				显然，这个映射是一个$[0,1]$到$(0,1)$的双射
+			\end{proof}
+			这个引理证明中映射的构造采取了“希尔伯特的旅馆”的想法。这个想法是说：
+			
+			如果有一个具有可数个房间并且已经满了的旅馆，我们希望在不赶走任意一个顾客的前提下，将一个新的顾客安排进旅馆。我们可以让每个顾客都来到自己的下一个房间，而将新的顾客安排在第一个房间。
+			
+			用数学语言描述就是：如果有一个点列$\{a_n\}$,我们希望在不舍弃任何一项下添加$m$项，我们只需要将原来的$a_i$迁移到$a_{i+m}$，而把新的项添加到现在空缺的前$m$项。
+			
+			在证明过程中，我们采取的是点列$\{\frac{1}{n},n>1\}$，将$0,1$迁移到这个序列内。
+			\begin{lemma}{引理3}{}
+				$Card [0,1] = Card \{0,1\}^\infty$
+			\end{lemma}
+			\begin{proof}
+				从第一章中关于进制的定理可知，$\forall a \in [0,1],\exists \{a_n\},a_i \in \{0,1\}$，使得
+				
+				$a = \sum\limits_{i=0}^{\infty}\frac{a_i}{2^i}$，且这一对应关系是双射的。
+			\end{proof}
+			\begin{lemma}{引理4}{}
+				$Card \{0,1\}^S = Card \mathscr{P}(S)$
+			\end{lemma}
+			\begin{proof}
+				定义示性函数$\chi_A:S\rightarrow\{0,1\}$。
+				
+				$\chi_A(x) = \begin{cases}
+					1,x \in A \\
+					0,x \in S-A
+				\end{cases}$
+				
+				并定义映射$\varphi : \mathscr{P}(S)\rightarrow \{0,1\}^S$
+				
+				$\varphi(A) := \chi_A$
+				
+				接下来证明$\varphi$是双射：
+				
+				$\varphi$的单射性是显然的；而对于满射性，$\forall f \in \{0,1\}^S$
+				
+				令$A = \{x|f(x)=1\}$，那么就有$\chi_A=f$，双射性得证
+			\end{proof}
+			\begin{lemma}{引理5}
+				集合$A,B$若有$Card A = Card B$，那么有$Card \mathscr{P}(A) = Card \mathscr{P}(B)$
+			\end{lemma}
+			\begin{proof}
+				设$Card A=Card B$，且$A\rightarrow B$的双射是$f$
+				
+				那么我们构造：$g:\mathscr{P}(A)\rightarrow\mathscr{P}(B)$
+				
+				$g(X) := \{b|b=f(a),a\in X\}$
+				
+				接下来证明$g$是双射
+				
+				先证明单射性。设$X\neq Y$,所以一定$\exists a$，只处于$X,Y$这两个集合中的一个
+				
+				因为$f$是一个双射，所以$f(a)$只处于$g(X),g(Y)$这两个集合中的一个，所以$g(X)\neq g(Y)$，单射性得证。
+				
+				对于满射性，由$f$的满射性可知这是显然的。
+			\end{proof}
+			\begin{lemma}{引理6}
+				如果$Card X = Card Y$，那么$Card X^Z = Card Y^Z$
+			\end{lemma}
+			\begin{proof}
+				设$X\rightarrow Y$的双射为$f$
+				
+				那么定义映射$\varphi:X^Z \rightarrow Y^Z$
+				
+				$\varphi(g) = g \circ f$
+				
+				$\varphi$的双射性是显然的。
+			\end{proof}
+			\begin{proposition}
+				$Card \R = Card \R^\infty$
+			\end{proposition}
+			\begin{proof}
+				由引理1,2,3可知，$Card \R = Card \{0,1\}^\infty$
+				
+				接下来，只需注意到两个事实：$Card {\left(\{0,1\}^{\infty}\right)^{\infty} }= Card \{0,1\}^{\Q}$，因为我们知道$Card {\N^2} = Card {\Q}$，
+				
+				并且注意到$Card \N = Card \Q$，再利用引理4,5，即得$Card \R = Card \left(\{0,1\}^\infty\right)^\infty$
+				
+				接下来，我们利用引理3的结果：$Card [0,1] = Card \{0,1\}^\infty$，并且使用引理6，我们即得：
+				
+				$Card \R = Card [0,1]^\infty$
+				
+				随后，再次利用引理6,以及引理1,2得到的结果：$Card \R = Card [0,1]$
+				
+				我们至此就得到我们所需结果：$Card \R = Card \R^\infty$
+			\end{proof}
+			\begin{proposition}
+				$Card \R = Card \R^m$
+			\end{proposition}
+			\begin{proof}
+				设$R_1 = \{(a,0,\cdots)|a \in \R\}$
+				
+				$R_2 = \{(a_1,a_2,\cdots,a_m,\cdots)|a_i \in \R\}$
+				
+				显然，$R_1 \subset R_2 \subset \R^\infty$
+				
+				但是$Card R_1 = Card \R,Card R_2 = Card \R^m,Card \R = Card \R^\infty$,那么一定有$Card \R = Card \R^m$
+			\end{proof}
+		\subsection{皮亚诺曲线}
 	%附录：伯努利数和欧拉数
 	\section{伯努利数与欧拉数}
 		在对泰勒公式的研究中，我们推到了标准指数函数$\exp x$的级数展开，它的系数是极其容易推导的。
@@ -199,6 +364,32 @@
 							
 							而Zeta函数对于全体正整数取正值，命题得证。
 						\end{proof}
+					\point{从$B_6$开始，伯努利数的绝对值依次递增}
+						\begin{proposition}
+							$|B_{2k}|<|B_{2k+2}|,k \geqslant 3$
+						\end{proposition}
+						\begin{proof}
+							在之前的命题中，我们证明了：$\Rightarrow B_{2n} = (2n)!\frac{2(-1)^{n+1}}{(2\pi)^{2n}}\zeta(2n)$
+							
+							$\therefore |B_{2k}| = (2k)!\frac{2}{(2\pi)^{2k}}\zeta(2k)$
+							
+							$|B_{2k+2}| = (2k+2)!\frac{2}{(2\pi)^{2k+2}}\zeta(2k+2)$
+							
+							两者作差，$|B_{2k+2}|-|B_{2k}|$
+							
+							$=2\frac{(2k+2)!\zeta(2k+2)-(2k)!\zeta(2k)(2\pi)^2}{(2\pi)^{2k+2}}$
+							
+							因为当$s>1,s \in \N_+$时，$\zeta(s)$单调递减且$\lim\limits_{s\to\infty}\zeta(s) = 1$
+							
+							我们计算得$\zeta(6)=\frac{\pi^2}{945}$，所以可以作估计：$\zeta(2k+2)>1,\zeta(2k)<\frac{\pi^2}{945}$
+							
+							$\therefore (2k+2)!\zeta(2k+2)-(2k)!\zeta(2k)(2\pi)^2$
+							
+							$> (2k+2)!-(2k)!\cdot 4\pi^2 \frac{\pi^6}{945}$
+							
+							$=\left((2k+2)(2k+1)- 4\pi^2 \frac{\pi^6}{945}\right)(2k)!>0$
+							
+						\end{proof}
 					\point{自然幂指数和的通式}
 					\begin{proposition}
 						$S_p(n)=\sum\limits_{k=1}^{n}k^p=\frac{1}{p+1}\sum\limits_{i=0}^{p} (-1)^i B_i \binom{p+1}{i} n^{p+1-i}$
@@ -227,6 +418,24 @@
 					\frac{z e^{xz}}{e^z-1}=\sum\limits_{n=0}^{\infty} \frac{B_n(x)}{n!}z^n
 				\end{equation}
 			\end{defn}
+			\point{性质}
+			\begin{para}{1}
+				\point{}
+					\begin{proposition}
+						$B_n(0)=B_n,B_n(1)=(-1)^{n}B_n$
+					\end{proposition}
+					\begin{proof}
+						 在伯努利多项式的定义中分别代入$0,1$：
+						 
+						 $\frac{z}{e^z-1}=\sum\limits_{n=0}^{\infty} \frac{B_n(0)}{n!}$
+						 
+						 对比伯努利数的定义即得$B_n(0) = B_n$
+						 
+						 $\frac{z e^z}{e^z-1}=\sum\limits_{n=0}^{\in\infty} \frac{B_n(1)}{n!}z^n$
+						 
+						 $\Rightarrow\frac{z}{1-e^{-z}}=\frac{-z}{e^{-z}-1} = \sum\limits_{n=0}^{\infty} \frac{B_n}{n!}z^n$
+					\end{proof}
+			\end{para}
 		\end{para}
 		\begin{them}{欧拉-麦克劳林公式}{}
 			假设$f(x)$无穷阶可导，那么：

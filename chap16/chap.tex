@@ -1,0 +1,29 @@
+\ifx\allfiles\undefined
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
+\def\path{../config}
+\input{../config/_config}
+\begin{document}
+	% \input{../config/cover}
+	\else
+	\fi
+	
+	\chapter{一致收敛性、函数项级数与函数族的基本运算}
+	在之前章节的讨论中，曾经涉及了级数一般项是函数的级数，也就是所谓的函数项级数。
+	
+	在此之前，我们利用了所谓“逐点收敛”，即对每一变量取值收敛。但是，一些例子中我们发现这种收敛性并不具备很好的性质。
+	
+	我们提出一致收敛性这一全新的收敛性，这一性质可以允许级数仅仅需要少量条件就可以拥有微分、积分上的良好性质
+	
+	\section{逐点收敛性和一致收敛性}
+		\subsection{逐点收敛性}
+			\begin{defn}{逐点收敛性}{}
+				考虑函数列$f_n : X \to \R$.如果在点$x \in X$，$\{f_n(x),n \in \}$收敛，则称$\{f_n(x),n \in \N\}$在点$x$收敛
+				
+				使得$\{f_n(x),n \in \N\}$收敛的点的集合称为收敛集。
+				
+				$\{f_n(x),n \in \N\}$在其收敛集上产生的极限$f(x) = \lim\limits_{n\to\infty}f_n(x)$称为极限函数，同时称$\{f_n(x),n \in \N\}$逐点收敛于$f(x)$
+			\end{defn}
+	
+	\ifx\allfiles\undefined
+\end{document}
+\fi
