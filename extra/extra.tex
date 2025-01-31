@@ -13,6 +13,118 @@
 	证明可能使用复分析、实分析、泛函等超纲内容
 	%--------------------正文---------------------------
 	
+	%附录：实数的等价定义
+	\section{实数的等价定义}
+	第二章提及的实数公理定义了实数；但是，其实还有一些构造性方法可以定义实数。戴德金分割和柯西序列是其中的两个。
+	
+	首先，我们要先构造出自然数集，进而构造有理数集。
+		\subsection{Peano公理，自然数集}
+			\begin{para}{0}
+				\point{自然数集的定义}
+					\begin{defn}{自然数集的Peano公理}{}
+						存在一个运算$*:\N \rightarrow \N_+$，称为后继，满足以下性质：
+						
+						\ding{172} 存在一个元素$0$，$0 \in \N$
+						
+						\ding{173} $\forall a \in \N ,a^* \neq 0$
+						
+						\ding{174} 如果$a \neq b,$那么$a^* \neq b^*$
+						
+						这个集合$\N$称为自然数集，$\N_+$称为正整数集。
+					\end{defn}
+					可以看出来，Peano公理与实数公理不同，是借助后继运算而不是加法和乘法。不过，接下来我们将递归地定义加法和乘法，并定义自然数的序。
+					
+					我们按照之前的常用记号，记$0^*=1,1^*=2,2^*=3,\cdots$
+				\point{加法}
+					\begin{defn}{自然数的加法}{}
+						我们定义运算$+:\N \times \N \rightarrow \N$，称为加法，满足以下性质：
+						
+						$a^*+b=(a+b)^*$
+						
+						特别地，我们定义$0+b=b$
+					\end{defn}
+					我们首先验证此处定义的加法是否依旧具有交换律和结合律
+					
+					我们首先证明几个引理。
+					\begin{lemma}{}{}
+						$n+0=n$
+					\end{lemma}
+					\begin{proof}
+						对n使用数学归纳法：首先，当$n=0,0+0=0$依定义是成立的。
+						
+						接下来假设$n+0=n$，那么，$n^*+0=(n+0)^*=n^*$，依归纳原理，命题得证。
+					\end{proof}
+					\begin{lemma}{}{}
+						$n+m^{*}=(n+m)^{*}$
+					\end{lemma}
+					\begin{proof}
+						固定$m$，对$n$作数学归纳法：
+						
+						首先，当$n=0$，$0+m^*=m^*=(0+m)^*$
+						
+						现在假设$n+m^*=(n+m)^*$
+						
+						那么，$n^*+m^*=\left(n^*+m\right)^*$
+						
+						这里可以将$n^*$视为一个整体，加上$m$的后继，于是命题得证。
+					\end{proof}
+					结合加法的定义，马上得到以下推论：
+					\begin{corollary}{}{}
+						$n+m^*=n^*+m$
+					\end{corollary}
+					于是又有以下推论：
+					\begin{corollary}{}{}
+						$n^*=n+1$
+					\end{corollary}
+					\begin{proof}
+						在上面的推论中代入$m=0$
+						
+						$n+0^*=n^*+0$
+						
+						$\Rightarrow n+1=n^*$
+					\end{proof}
+					此后，我们不再使用$n^*$的记号，而是用$n+1$代替。
+					
+					于是，我们证明了自然数加法的交换律：
+					\begin{proposition}
+						$n+m=m+n$
+					\end{proposition}
+					\begin{proof}
+						固定$n$，对$m$作数学归纳法。
+						
+						首先，当$m=0$，$n+0=0+n$，命题成立。
+						
+						现在假设$n+m=m+n$，我们只需证明$n+(m+1)=(m+1)+n$，而这是已经证明的了。
+					\end{proof}
+					\begin{proposition}
+						$(a+b)+c=a+(b+c)$
+					\end{proposition}
+					\begin{proof}
+						固定$a,c$，对$b$作数学归纳法。
+						
+						当$b=0$，$(a+0)+c=a+c=a+(0+c)$，命题成立。
+						
+						现在假设$(a+b)+c=a+(b+c)$
+						
+						那么，$\left(a+(b+1)\right)+c$
+						
+						$=\left((a+b)+1\right)+c=(a+b+c)+1$
+						
+						$=a+\left((b+c)+1\right)=a+\left((b+1)+c\right)$，命题得证。
+					\end{proof}
+					至此，我们证明了加法在自然数集上的交换律和结合律。
+				\point{乘法}
+					\begin{defn}{自然数的乘法}
+						我们定义运算$\cdot : \N \times \N \rightarrow \N$，称为乘法，满足以下性质：
+						
+						$a \cdot (b+1) = a\cdot b + a$
+						
+						并且特别定义：$a \cdot 0 = 0$
+					\end{defn}
+			\end{para}
+		\subsection{有理数集}
+		\subsection{戴德金分割}
+		\subsection{柯西序列}
 	%附录：R，R^m，R^infty的比较
 	\section{\texorpdfstring{$\R,\R^m,\R^\infty$}势的比较，皮亚诺曲线}
 		\subsection{约定的记号}
@@ -143,7 +255,7 @@
 				
 				那么定义映射$\varphi:X^Z \rightarrow Y^Z$
 				
-				$\varphi(g) = g \circ f$
+				$\varphi(g) = f \circ g$
 				
 				$\varphi$的双射性是显然的。
 			\end{proof}
