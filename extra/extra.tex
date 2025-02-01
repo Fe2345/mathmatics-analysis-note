@@ -68,11 +68,24 @@
 						
 						这里可以将$n^*$视为一个整体，加上$m$的后继，于是命题得证。
 					\end{proof}
-					结合加法的定义，马上得到以下推论：
+					于是，我们证明了自然数加法的交换律：
+					\begin{proposition}
+						$n+m=m+n$
+					\end{proposition}
+					\begin{proof}
+						固定$n$，对$m$作数学归纳法。
+						
+						首先，当$m=0$，$n+0=0+n$，命题成立。
+						
+						现在假设$n+m=m+n$，我们只需证明$n+m^*=m^*+n$，而这是已经证明的了。
+						
+						但是，我们已经知道：$n+m^*=(n+m)^*,m^*+n=(m+n)^*$，而且我们已经假设$n+m=m+n$，于是命题得证。
+					\end{proof}
+					在证明过程中可以看出以下推论：
 					\begin{corollary}{}{}
 						$n+m^*=n^*+m$
 					\end{corollary}
-					于是又有以下推论：
+					于是有以下推论：
 					\begin{corollary}{}{}
 						$n^*=n+1$
 					\end{corollary}
@@ -84,18 +97,6 @@
 						$\Rightarrow n+1=n^*$
 					\end{proof}
 					此后，我们不再使用$n^*$的记号，而是用$n+1$代替。
-					
-					于是，我们证明了自然数加法的交换律：
-					\begin{proposition}
-						$n+m=m+n$
-					\end{proposition}
-					\begin{proof}
-						固定$n$，对$m$作数学归纳法。
-						
-						首先，当$m=0$，$n+0=0+n$，命题成立。
-						
-						现在假设$n+m=m+n$，我们只需证明$n+(m+1)=(m+1)+n$，而这是已经证明的了。
-					\end{proof}
 					\begin{proposition}
 						$(a+b)+c=a+(b+c)$
 					\end{proposition}
@@ -120,6 +121,98 @@
 						$a \cdot (b+1) = a\cdot b + a$
 						
 						并且特别定义：$a \cdot 0 = 0$
+					\end{defn}
+					我们仿照加法，先证明几个引理。
+					\begin{lemma}{}{}
+						$0 \cdot a = 0$
+					\end{lemma}
+					\begin{proof}
+						对$a$作数学归纳法：
+						
+						当$a=0$，$0 \cdot 0 = 0$
+						
+						现在假设$0 \cdot a = 0$，那么：$0 \cdot (a+1) = 0\cdot a + 0=0$，命题得证
+					\end{proof}
+					\begin{lemma}{}{}
+						$(b+1)\cdot a = b\cdot a+a$
+					\end{lemma}
+					\begin{proof}
+						固定$b$，对$a$作数学归纳法：
+						
+						当$a=0$，$(b+1)\cdot 0 = 0 = b\cdot 0+0$
+						
+						现在假设$(b+1)\cdot a = b\cdot a+a$
+						
+						那么，$(b+1)\cdot (a+1)=(b+1)\cdot a+(b+1)$
+						
+						$=b\cdot a+a+(b+1)=b\cdot a+b+(a+1)$
+						
+						$=b\cdot a + a + (b+1)=b\cdot (a+1)+(a+1)$，命题得证。
+					\end{proof}
+					接下来证明交换律
+					\begin{proposition}{}{}
+						$a\cdot b = b\cdot a$
+					\end{proposition}
+					\begin{proof}
+						固定$a$，对$b$作数学归纳法。
+						
+						当$b=0$，$a \cdot 0 = 0 \cdot a$，命题成立。
+						
+						现在假设$a\cdot b = b\cdot a$，我们欲证$a\cdot (b+1)=(b+1)\cdot a$
+						
+						但是我们知道：$a\cdot (b+1)=a\cdot b+a,(b+1)\cdot a = b\cdot a+a$，并且我们已经假设$a\cdot b=b\cdot a$，于是命题成立。
+					\end{proof}
+					于是有以下推论：
+					\begin{corollary}{}{}
+						$a\cdot 1 = 1\cdot a = a$
+					\end{corollary}
+					\begin{proof}
+						$a\cdot 1 = a\cdot (0+1)=a\cdot 0+a=a$，再结合交换律即得证。
+					\end{proof}
+					这个推论说明：我们利用Peano公理定义的1依旧是对乘法的单位元，与我们在实数公理下定义的1一致。
+					
+					接下来证明分配律。
+					\begin{proposition}{}{}
+						$a\cdot (b+c)=a\cdot b+a\cdot c$
+					\end{proposition}
+					\begin{proof}
+						固定$a$和$b$，对$c$作数学归纳法。
+						
+						当$c=0$，$a\cdot (b+0)=a\cdot b=a\cdot b+a\cdot 0$，命题成立。
+						
+						现在假设$a\cdot (b+c)=a\cdot b+a\cdot c$
+						
+						那么，$a\cdot \left(b+(c+1)\right)=a\cdot \left((b+c)+1\right)$
+						
+						$=a\cdot (b+c)+a=a\cdot b+a\cdot c+a=a\cdot b+a\cdot (c+1)$，于是命题得证。
+					\end{proof}
+					最后，我们证明结合律。
+					\begin{proposition}{}{}
+						$a\cdot (b\cdot c)=(a\cdot b)\cdot c$
+					\end{proposition}
+					\begin{proof}
+						固定$a,b$，对$c$作数学归纳法：
+						
+						当$c=0$，$a\cdot (b\cdot 0)=a\cdot 0=0=(a\cdot b)\cdot 0$，命题成立
+						
+						现在假设$a\cdot (b\cdot c)=(a\cdot b)\cdot c$
+						
+						那么，$a\cdot \left(b\cdot (c+1)\right)=a\cdot (b\cdot c+b)$
+						
+						$=a\cdot (b\cdot c)+a\cdot b=(a\cdot b)\cdot c+a\cdot b=(a\cdot b)\cdot (c+1)$，命题得证。
+					\end{proof}
+					至此，我们证明了自然数集上关于加法、乘法、加法与乘法联系的公理。
+				\point{序}
+					\begin{defn}{自然数集上的序}{}
+						我们定义：$\N$上存在一个关系$\geqslant$，称为大于等于，满足以下性质：
+						
+						$a \geqslant b$，当且仅当$\exists p \in \N,a=b+p$
+						
+						如果$a \geqslant b$，我们又称$b \leqslant a$，如此定义的关系$\leqslant$称为小于等于;
+						
+						如果$a \geqslant b$，并且$a \neq b$，那么我们称$a > b$，如此定义的关系$>$称为大于；
+						
+						如果$a \leqslant b$，并且$a \neq b$，那么我们称$a < b$，如此定义的关系$<$称为小于
 					\end{defn}
 			\end{para}
 		\subsection{有理数集}
