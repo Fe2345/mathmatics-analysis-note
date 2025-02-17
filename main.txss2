@@ -6,7 +6,7 @@
     "Session": {
         "Bookmarks": [
         ],
-        "CurrentFile": "chap16/chap.tex",
+        "CurrentFile": "extra/extra.tex",
         "FileVersion": 1,
         "Files": [
             {
@@ -18,52 +18,28 @@
                 "Line": 5
             },
             {
-                "Col": 24,
+                "Col": 25,
                 "EditorGroup": 0,
                 "FileName": "extra/extra.tex",
-                "FirstLine": 227,
+                "FirstLine": 232,
                 "FoldedLines": "",
-                "Line": 245
+                "Line": 254
             },
             {
                 "Col": 28,
                 "EditorGroup": 0,
                 "FileName": "config/theorem1.tex",
-                "FirstLine": 0,
+                "FirstLine": 14,
                 "FoldedLines": "",
                 "Line": 41
             },
             {
-                "Col": 63,
+                "Col": 19,
                 "EditorGroup": 0,
-                "FileName": "config/paragraph.tex",
+                "FileName": "config/package.tex",
                 "FirstLine": 0,
                 "FoldedLines": "",
-                "Line": 1
-            },
-            {
-                "Col": 18,
-                "EditorGroup": 0,
-                "FileName": "config/custom.tex",
-                "FirstLine": 0,
-                "FoldedLines": "",
-                "Line": 6
-            },
-            {
-                "Col": 20,
-                "EditorGroup": 0,
-                "FileName": "config/_config.tex",
-                "FirstLine": 0,
-                "FoldedLines": "",
-                "Line": 12
-            },
-            {
-                "Col": 104,
-                "EditorGroup": 0,
-                "FileName": "chap16/chap.tex",
-                "FirstLine": 1,
-                "FoldedLines": "",
-                "Line": 23
+                "Line": 14
             }
         ],
         "MasterFile": "",

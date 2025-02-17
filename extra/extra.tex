@@ -113,7 +113,23 @@
 						
 						$=a+\left((b+c)+1\right)=a+\left((b+1)+c\right)$，命题得证。
 					\end{proof}
+					从此以后，我们就可以使用形如$a+b+c$的符号了，因为我们已经证明了这种求和在不同顺序下有相同的结果。
+					
 					至此，我们证明了加法在自然数集上的交换律和结合律。
+					
+					我们在证明一个显然的命题。
+					\begin{proposition}{}
+						$a = b \Leftrightarrow a+c=b+c$
+					\end{proposition}
+					\begin{proof}
+						对$c$作数学归纳法：
+						
+						当$c=0$，$a+0=a,b+0=b$，所以命题显然成立。
+						
+						现在假设$a = b \Leftrightarrow a+c=b+c$
+						
+						那么$a=b\Leftrightarrow a+c=b+c \Leftrightarrow (a+c)+1=(b+c)+1 \Leftrightarrow a+(c+1)=b+(c+1)$，于是命题得证。
+					\end{proof}
 				\point{乘法}
 					\begin{defn}{自然数的乘法}
 						我们定义运算$\cdot : \N \times \N \rightarrow \N$，称为乘法，满足以下性质：
@@ -214,6 +230,111 @@
 						
 						如果$a \leqslant b$，并且$a \neq b$，那么我们称$a < b$，如此定义的关系$<$称为小于
 					\end{defn}
+					我们首先验证这里的序的确是序公理中的序，即验证自反性、传递性、反对称性。
+					\begin{proposition}
+						$\forall a\in \N,a \geqslant a$
+					\end{proposition}
+					\begin{proof}
+						注意到，$a=a+0,0\in\N$
+					\end{proof}
+					\begin{proposition}
+						$a \geqslant b,b\geqslant c \Rightarrow a\geqslant c$
+					\end{proposition}
+					\begin{proof}
+						$a \geqslant b,b\geqslant c \Leftrightarrow \exists s,t\in \N,a=b+s,b=c+t$
+						
+						即$a=c+s+t$，而$s+t\in\N$
+					\end{proof}
+					\begin{proposition}
+						$a \geqslant b,b\geqslant a \Rightarrow a=b$
+					\end{proposition}
+					\begin{proof}
+						$a \geqslant b,b\geqslant a \Rightarrow \exists s,t \in \N,a=b+s,b=a+t$
+						
+						$\Rightarrow s+t=0$，现在假设$s\neq 0$，那么$\exists u\in\N,u+1=s$
+						
+						所以$(u+1)+t=0\Rightarrow (u+t)+1=0$，但是按照公理，应该没有元素的后继为$0$。
+						
+						所以我们有$s=0$，此时$a=b+0=b$。
+					\end{proof}
+					接下来我们证明序与加法联系的公理在现在依旧是成立的：
+					\begin{proposition}
+						$a \geqslant b \Rightarrow \forall s\in\N,a+s \geqslant b+s$
+					\end{proposition}
+					\begin{proof}
+						$a \geqslant b \Rightarrow \exists t\in\N,a=b+t$
+						
+						只需证明，$\forall s \in \N a+s=b+t+s$成立，但是按照之前我们证明的命题，这是显然的。
+					\end{proof}
+			\end{para}
+		\subsection{整数集}
+			\begin{para}{0}
+				\point{整数集的定义}
+					\begin{defn}{整数集}{}
+						我们将形如$a\textemdash b$的数对称为整数，其中$a,b \in \N$。
+						
+						并特别规定：$a\textemdash b = c\textemdash d \Leftrightarrow a+d=b+c$
+						
+						集合$\Z = \{a\textemdash b| a,b \in \N\}$称为整数集
+					\end{defn}
+					我们还希望，整数集是自然数集的一个补充，因此有以下补充定义：
+					\begin{defn}{自然数集和整数集}{}
+						我们定义：$a\textemdash 0 = a,a\in\N$
+					\end{defn}
+					这个定义是良好的，因为我们容易知道，$\{a\textemdash 0 | a\in\N\}$与$\N$同构。
+					
+					整数集构造的想法是很自然的：整数集在直观的认知下是自然数集及其“相反数”的并，因此我们希望我们定义的整数可以分解为两个自然数的“差”。
+					
+					接下来我们沿着这个想法，定义出我们直观上的加、乘、负、减这三种运算。
+				\point{整数的加法}
+					\begin{defn}{整数的加法}{}
+						我们定义：
+						
+						$(a\textemdash b)+(c\textemdash d) := (a+c)\textemdash(b+d)$
+					\end{defn}
+					我们先验证加法的定义是良好的，即如果按照整数的定义替换整数的形式，加法的结果不会改变。
+					\begin{proposition}{}
+						如果$(a_1\textemdash b_1)=(a_2\textemdash b_2)$，那么一定有
+						
+						$(a_1\textemdash b_1)+(c\textemdash d)=(a_2\textemdash b_2)+(c\textemdash d),(c\textemdash d)+(a_1\textemdash b_1)=(c\textemdash d)+(a_2\textemdash b_2)$
+					\end{proposition}
+					\begin{proof}
+						先证第一条。$(a_1\textemdash b_1)+(c\textemdash d)=(a_1+c)\textemdash(b_1+d),(a_2\textemdash b_2)+(c\textemdash d)=(a_2+c)\textemdash(b_2+d)$，
+						
+						于是只需证$a_1+c+b_2+d=b_1+d+a_2+c$，但这按照整数相等的定义是显然的。
+						
+						同理可证第二条。
+					\end{proof}
+					在定义了整数的加法后，我们还需验证，在加法的关系下$a \textemdash 0$依旧和$a$是等同的。
+					\begin{proposition}
+						$(a\textemdash 0)+(b\textemdash 0) = a+b = (a+b)\textemdash 0$
+					\end{proposition}
+					这个命题是显然的。
+				\point{整数的乘法}
+					\begin{defn}{整数的乘法}{}
+						我们定义：
+						
+						$(a\textemdash b)\cdot(c\textemdash d) := (a\cdot c + b\cdot d)\textemdash(a\cdot d+b\cdot c)$
+					\end{defn}
+					同样地，我们先验证乘法的定义是良好的。
+					\begin{proposition}
+						如果$(a_1 \textemdash b_1)=(a_2 \textemdash b_2)$，
+						
+						那么$(a_1 \textemdash b_1)\cdot (c\textemdash d)=(a_2 \textemdash b_2)\cdot (c\textemdash d),(c\textemdash d)\cdot (a_1 \textemdash b_1)=(c\textemdash d)\cdot(a_2 \textemdash b_2)$
+					\end{proposition}
+					\begin{proof}
+						先证第一条。
+						
+						$(a_1 \textemdash b_1)\cdot (c\textemdash d)=(a_1 \cdot c+b_1\cdot d)\textemdash (a_1\cdot d+b_1\cdot c)$
+						
+						$(a_2 \textemdash b_2)\cdot (c\textemdash d)=(a_2\cdot c+b_2\cdot d)\textemdash (a_2\cdot d+b_2\cdot c)$
+						
+						那么只需证明：$a_1 \cdot c+b_1\cdot d+a_2\cdot d+b_2\cdot c=a_1\cdot d+b_1\cdot c+a_2\cdot c+b_2\cdot d$
+						
+						$\Leftrightarrow (a_1+b_2)\cdot c + (a_2+b_1)\cdot d = (b_1+a_2)\cdot c+(a_1+b_2)\cdot d$，但是按照整数相等的定义这是显然的。
+						
+						同理可证第二条。
+					\end{proof}
 			\end{para}
 		\subsection{有理数集}
 		\subsection{戴德金分割}
