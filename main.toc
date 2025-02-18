@@ -19,11 +19,11 @@
 \contentsline {subsection}{\numberline {3.3.2}欧拉数}{17}{subsection.3.3.2}%
 \contentsline {section}{\numberline {3.4}欧拉-麦克劳林公式}{17}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}伯努利多项式}{18}{subsection.3.4.1}%
-\contentsline {section}{\numberline {3.5}其他四种三角函数的泰勒/洛朗展开}{18}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}$\cot x$}{18}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}$\tan x$}{20}{subsection.3.5.2}%
-\contentsline {section}{\numberline {3.6}原函数初等性的判定方法}{20}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}切比雪夫定理}{20}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}刘维尔定理}{21}{subsection.3.6.2}%
-\contentsline {section}{\numberline {3.7}一些超越积分的特殊解法}{21}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Direchlet积分}{21}{subsection.3.7.1}%
+\contentsline {section}{\numberline {3.5}其他四种三角函数的泰勒/洛朗展开}{20}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}$\cot x$}{20}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}$\tan x$}{21}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}原函数初等性的判定方法}{22}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}切比雪夫定理}{22}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}刘维尔定理}{22}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.7}一些超越积分的特殊解法}{22}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Direchlet积分}{22}{subsection.3.7.1}%

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.1.3)  17 FEB 2025 15:23
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.1.3)  18 FEB 2025 22:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1764,33 +1764,33 @@ File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 555.
 
-[14] [15] [16] [17]
+[14] [15] [16] [17] [18] [19]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 776.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\cot' on input line 776.
+(hyperref)                removing `math shift' on input line 867.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 776.
-
-[18]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 830.
+(hyperref)                removing `\cot' on input line 867.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tan' on input line 830.
+(hyperref)                removing `math shift' on input line 867.
+
+[20]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 921.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 830.
+(hyperref)                removing `\tan' on input line 921.
 
-[19]) [20] [21] (./main.aux (./config/cover.aux) (./chap1/chap.aux)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 921.
+
+[21]) [22] (./main.aux (./config/cover.aux) (./chap1/chap.aux)
 (./chap16/chap.aux) (./extra/extra.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -1808,4 +1808,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  98i,16n,120p,1263b,2937s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (26 pages).
+Output written on main.pdf (27 pages).

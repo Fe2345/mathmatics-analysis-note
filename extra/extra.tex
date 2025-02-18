@@ -757,9 +757,100 @@
 						 
 						 对比伯努利数的定义即得$B_n(0) = B_n$
 						 
-						 $\frac{z e^z}{e^z-1}=\sum\limits_{n=0}^{\in\infty} \frac{B_n(1)}{n!}z^n$
+						 $\frac{z e^z}{e^z-1}=\sum\limits_{n=0}^{\infty} \frac{B_n(1)}{n!}z^n$
 						 
 						 $\Rightarrow\frac{z}{1-e^{-z}}=\frac{-z}{e^{-z}-1} = \sum\limits_{n=0}^{\infty} \frac{B_n}{n!}z^n$
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						$B_n(x) = \sum\limits_{i=0}^{n} \binom{n}{i}B_i x^{n-i}$
+					\end{proposition}
+					\begin{proof}
+						依伯努利数定义，$\frac{z e^{xz}}{e^z-1}=\sum\limits_{k=0}^{\infty} \frac{B_k(x)}{k!}z^k$
+						
+						那么$\frac{z e^{xz}}{e^z-1}=\frac{z}{e^z-1} e^{xz}$
+						
+						$=\sum\limits_{i=0}^{\infty} B_i \frac{z^i}{i!} \cdot \sum\limits_{j=0}^{\infty} \frac{(xz)^j}{j!}$
+						
+						$=\sum\limits_{k=0}^{\infty} \left(\sum\limits_{i=0}^{\infty} B_i \frac{x^i}{i!}\cdot \frac{(xz)^{k-i}}{(k-i)!}\right)$
+						
+						$=\sum\limits_{k=0}^{\infty} \left(\sum\limits_{i=0}^{\infty} \frac{B_i x^{k-i}}{(k-i)!i!}z^k\right)$
+						
+						$=\sum\limits_{k=0}^{\infty} \left(\sum\limits_{i=0}^{\infty} \frac{B_i k!}{(k-i)!i!}x^{k-i}\right) z^k$
+						
+						比较系数即得：$B_n(x) = \sum\limits_{i=0}^{n} \binom{n}{i}B_i x^{n-i}$。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						$B_n^{\prime} (x) = n B_{n-1} (x)$
+					\end{proposition}
+					\begin{proof}
+						依伯努利数定义：$\frac{z e^{xz}}{e^z-1} = \sum\limits_{n=0}^{\infty} \frac{B_n(x)}{n!}z^n$
+						
+						对两侧求对x的导数得：$\frac{z^2 e^{xz}}{e^z-1} = \sum\limits_{n=1}^{\infty} \frac{B_n^{\prime}(x)}{n!}z^n$
+						
+						此处把求和下限调整为1是因为注意到，级数在$i=0$时为常数，因此此项导数为0。
+						
+						两侧同除z得：$\frac{z e^{xz}}{e^z-1} = \sum\limits_{n=1}^{\infty} \frac{B_n^{\prime}(x)}{n!}z^{n-1}$
+						
+						$=\sum\limits_{n=0}^{\infty} \frac{B_{n+1}^{\prime}(x)}{(n+1)!}z^{n}$
+						
+						$=\sum\limits_{n=0}^{\infty} \frac{B_{n+1}^{\prime}(x)}{(n+1)\cdot n!}z^{n}$
+						
+						对比系数得：$B_n(x) = \frac{B_{n+1}^{\prime}(x)}{n+1}$，于是命题得证。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						$\int_{0}^{1} B_n (x) \d x = 0 ,n \geqslant 1$
+					\end{proposition}
+					\begin{proof}
+						利用上面给出的导数性质：
+						
+						$\int_{0}^{1} B_n (x) \d x = \frac{B_{n+1}(x)}{n+1} \bigg|_{0}^{1} = \frac{1}{n+1}\left(B_{n+1}(1)-B_n(0)\right)$
+						
+						那么只需要注意到，当$n\geqslant 2$，如果$n$为偶，按前面的断言有$B_n(1)=B_n=B_n(0)$；而如果$n$为奇，那么$B_n(1) = B_n(0) = B_n = 0$，于是命题得证。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						$B_n (x+1)-B_n (x) = nx^{n-1}$
+					\end{proposition}
+					\begin{proof}
+						考虑构造与伯努利多项式生成函数类似的级数：
+						
+						$\sum\limits_{n=0}^{\infty} \left(B_n(x+1)-B_n(x)\right) \frac{x^n}{n!}$
+						
+						$=\sum\limits_{n=0}^{\infty} B_n(x+1) \frac{x^n}{n!}-\sum\limits_{n=0}^{\infty} B_n(x) \frac{x^n}{n!}$
+						
+						$=\frac{z e^{(x+1)z}}{e^z-1}-\frac{z e^{xz}}{e^z-1}$
+						
+						$=\frac{z e^{xz} (e^z-1)}{e^z-1} = z e^{xz}$
+						
+						$=\sum\limits_{n=0}^{\infty} x^n \frac{z^{n+1}}{n!}$
+						
+						$=\sum\limits_{n=0}^{\infty} (n+1)x^n \frac{z^{n+1}}{(n+1)!}$
+						
+						$=\sum\limits_{n=1}^{\infty} n x^n \frac{z^{n}}{(n)!}$
+						
+						$=\sum\limits_{n=0}^{\infty} n x^n \frac{z^{n}}{(n)!}$，因为此级数的$n=0$项为0。
+						
+						于是对比系数即得证。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						$B_n (1-x) = (-1)^n B_n(x)$
+					\end{proposition}
+					\begin{proof}
+						考虑以下级数：
+						
+						$\sum\limits_{n=0}^{\infty} (-1)^n B_n(x) \frac{z^n}{n!}$
+						
+						$=\sum\limits_{n=0}^{\infty} B_n(x) \frac{(-z)^n}{n!}$
+						
+						$=\frac{-z e^{-xz}}{e^{-z}-1}$
+						
+						上下同乘$-e^z$，$=\frac{z e^{(1-x)z}}{e^z-1}$
+						
+						$=\sum\limits_{n=0}^{\infty} B_n(1-x) \frac{z^n}{n!}$，于是命题得证
 					\end{proof}
 			\end{para}
 		\end{para}
