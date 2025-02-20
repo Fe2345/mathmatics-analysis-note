@@ -962,7 +962,64 @@
 				初等的充要条件是：$p,\frac{m+1}{n},\frac{m+1}{n}+p$中至少有一个为整数
 			\end{them}
 		\subsection{刘维尔定理}
-	
+			\begin{para}{0}
+				在介绍刘维尔定理前，需要先介绍一些微分代数的概念：
+				
+				首先我们扩展微分的概念。我们将满足类似乘法、除法微分性质的泛函也称为微分。
+				
+				先引入微分域及其常数域
+				\point{微分域}
+					\begin{defn}{微分域}{}
+						一个由函数组成的域$F$及其上的一个算子$\delta:F \rightarrow F$，如果$\forall f,g \in F$有：
+						
+						$\ding{172} \delta(f+g) = \delta(f)+\delta(g)$
+						
+						$\ding{173} \delta(fg) = \delta(f)\cdot g+f \cdot \delta(g)$
+						
+						那么称$(F,\delta)$是一个微分域
+					\end{defn}
+					容易验证$\delta$是线性算子，于是我们有时简记$\delta(f)$为$\delta f$
+					\begin{defn}{微分域的常数域}{}
+						微分域$(F,\delta)$的常数域定义为：
+						
+						$Con (F,\delta) =\{f \in F| \delta f = 0\}$
+					\end{defn}
+					同时定义域的扩张：
+					\begin{defn}{域的扩张}{}
+						设$F,K$是两个域，并且$K$是满足$F \subseteq K$且包含$h \subseteq K$的最小域（即$K$是任何满足上述条件的域的子域），记作$K = F(h)$
+					\end{defn}
+					作为接下来内容的预备，我们先验证那些显然的微分性质：
+					\begin{proposition}
+						$\delta C = 0$，其中$C$为常数 
+					\end{proposition}
+					\begin{proof}
+						只需要验证$\delta 1 = 0$
+						
+						那么有：$\delta (1\cdot 1) = \delta 0 \cdot 1 + 1 \cdot \delta 1=2\delta 1$
+						
+						于是有$\delta 1 = 0$，利用微分的线性即得证。
+					\end{proof}
+					\begin{proposition}
+						$\delta \left(\frac{f}{g}\right)=\frac{\delta f \cdot g - f \delta g}{g^2}$
+					\end{proposition}
+					\begin{proof}
+						首先推导$\delta \left(\frac{1}{g}\right)$
+						
+						$\because \delta 1 = \delta \left(g \cdot \frac{1}{g}\right) = 0$
+						
+						$\Rightarrow \delta g \frac{1}{g}+g \delta \left(\frac{1}{g}\right)=0$
+						
+						$\Rightarrow \delta \left(\frac{1}{g}\right) = -\frac{\delta g}{g^2}$
+						
+						于是$\delta \left(\frac{f}{g}\right) = \delta \left(f \cdot \frac{1}{g}\right)$
+						
+						$=\delta f \frac{1}{g}-f \frac{\delta g}{g^2} = \frac{\delta f \cdot g - f \delta g}{g^2}$
+					\end{proof}
+				\point{微分域的初等扩张}
+					
+			\end{para}
+			
+			
 	%附录：超越积分的特殊解法
 	\section{一些超越积分的特殊解法}
 		\subsection{Direchlet积分}
