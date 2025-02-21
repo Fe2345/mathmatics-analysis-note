@@ -962,12 +962,12 @@
 				初等的充要条件是：$p,\frac{m+1}{n},\frac{m+1}{n}+p$中至少有一个为整数
 			\end{them}
 		\subsection{刘维尔定理}
+			在介绍刘维尔定理前，需要先介绍一些微分代数的概念：
+			
+			首先我们扩展微分的概念。我们将满足类似乘法、除法微分性质的泛函也称为微分。
+			
+			先引入微分域及其常数域
 			\begin{para}{0}
-				在介绍刘维尔定理前，需要先介绍一些微分代数的概念：
-				
-				首先我们扩展微分的概念。我们将满足类似乘法、除法微分性质的泛函也称为微分。
-				
-				先引入微分域及其常数域
 				\point{微分域}
 					\begin{defn}{微分域}{}
 						一个由函数组成的域$F$及其上的一个算子$\delta:F \rightarrow F$，如果$\forall f,g \in F$有：
@@ -995,7 +995,7 @@
 					\begin{proof}
 						只需要验证$\delta 1 = 0$
 						
-						那么有：$\delta (1\cdot 1) = \delta 0 \cdot 1 + 1 \cdot \delta 1=2\delta 1$
+						那么有：$\delta (1\cdot 1) = \delta 1 \cdot 1 + 1 \cdot \delta 1=2\delta 1$
 						
 						于是有$\delta 1 = 0$，利用微分的线性即得证。
 					\end{proof}
@@ -1016,7 +1016,34 @@
 						$=\delta f \frac{1}{g}-f \frac{\delta g}{g^2} = \frac{\delta f \cdot g - f \delta g}{g^2}$
 					\end{proof}
 				\point{微分域的初等扩张}
-					
+					接下来讨论什么是“初等”的函数。
+					\begin{defn}{微分域的初等扩张}{}
+						设$(F,\delta),(K,\delta)$是两个微分域，$h \in K$并且$K = F(h)$，那么：
+						
+						$\ding{172}$如果存在$F$中的一个多项式$p(x) \in F[x]$，有$p(h)=0$，那么称$h$是$F$的一个代数元素，$K=F(h)$是$F$的单代数扩张
+						
+						$\ding{173}$如果存在$F$中的一个函数$f$，使得$\delta h = \frac{\delta f}{f}$，那么称$K=F(h)$是$F$的单对数扩张
+						
+						$\ding{173}$如果存在$F$中的一个函数$f$，使得$\frac{\delta h}{h} = \delta f$，那么称$K=F(h)$是$F$的单指数扩张。
+						
+						单对数扩张和单指数扩张统称为单超越扩张，其对应的$h$称为$F$的超越元素；以上三种扩张统称为单初等扩张
+						
+						有限次初等扩张的复合称为初等扩张
+					\end{defn}
+					我们也可以在此以另外的方式定义出初等函数：
+					\begin{defn}{初等函数}{}
+						如果函数$f$处于微分域$\left(C(x),\frac{\d}{\d x}\right)$的某个初等扩张中，那么称$f$是一个初等函数
+					\end{defn}
+					接下来就可以给出刘维尔定理了。
+				\point{刘维尔定理}
+					\begin{them}{刘维尔定理}
+						设$(F,\delta),(K,\delta)$是两个微分域，$K$是$F$的初等扩张，并且$Con(F,\delta)=Con(K,\delta)$，且$\forall f \in F,\exists g \in K,s.t.\delta g = f$
+						
+						那么一定$\exists c_1,\cdots,c_n \in Con(F,\delta),u_1,\cdots,u_n,v \in F$，使得
+						\begin{equation}
+							g = \sum\limits_{i=1}^{n} c_i \ln (u_i)+v
+						\end{equation}
+					\end{them}
 			\end{para}
 			
 			

@@ -25,5 +25,5 @@
 \contentsline {section}{\numberline {3.6}原函数初等性的判定方法}{22}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1}切比雪夫定理}{22}{subsection.3.6.1}%
 \contentsline {subsection}{\numberline {3.6.2}刘维尔定理}{22}{subsection.3.6.2}%
-\contentsline {section}{\numberline {3.7}一些超越积分的特殊解法}{22}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Direchlet积分}{22}{subsection.3.7.1}%
+\contentsline {section}{\numberline {3.7}一些超越积分的特殊解法}{25}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Direchlet积分}{25}{subsection.3.7.1}%
