@@ -7,23 +7,23 @@
 \contentsline {section}{\numberline {3.1}实数的等价定义}{2}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Peano公理，自然数集}{2}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}整数集}{7}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}有理数集}{9}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}戴德金分割}{9}{subsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.1.5}柯西序列}{9}{subsection.3.1.5}%
-\contentsline {section}{\numberline {3.2}$\symbb {R},\symbb {R}^m,\symbb {R}^\infty $的比较，皮亚诺曲线}{9}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}约定的记号}{9}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}$\symbb {R},\symbb {R}^m,\symbb {R}^\infty $的比较}{10}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}皮亚诺曲线}{13}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}伯努利数与欧拉数}{13}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}伯努利数}{13}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}欧拉数}{17}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}欧拉-麦克劳林公式}{17}{section.3.4}%
+\contentsline {subsection}{\numberline {3.1.3}有理数集}{10}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}戴德金分割}{10}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}柯西序列}{10}{subsection.3.1.5}%
+\contentsline {section}{\numberline {3.2}$\symbb {R},\symbb {R}^m,\symbb {R}^\infty $的比较，皮亚诺曲线}{10}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}约定的记号}{10}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}$\symbb {R},\symbb {R}^m,\symbb {R}^\infty $的比较}{11}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}皮亚诺曲线}{14}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}伯努利数与欧拉数}{14}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}伯努利数}{14}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}欧拉数}{18}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}欧拉-麦克劳林公式}{18}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}伯努利多项式}{18}{subsection.3.4.1}%
-\contentsline {section}{\numberline {3.5}其他四种三角函数的泰勒/洛朗展开}{20}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}$\cot x$}{20}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}$\tan x$}{21}{subsection.3.5.2}%
-\contentsline {section}{\numberline {3.6}原函数初等性的判定方法}{22}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}切比雪夫定理}{22}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}刘维尔定理}{22}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.5}其他四种三角函数的泰勒/洛朗展开}{21}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}$\cot x$}{21}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}$\tan x$}{22}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}原函数初等性的判定方法}{23}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}切比雪夫定理}{23}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}刘维尔定理}{23}{subsection.3.6.2}%
 \contentsline {section}{\numberline {3.7}一些超越积分的特殊解法}{25}{section.3.7}%
 \contentsline {subsection}{\numberline {3.7.1}Direchlet积分}{25}{subsection.3.7.1}%

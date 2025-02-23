@@ -310,6 +310,34 @@
 						$(a\textemdash 0)+(b\textemdash 0) = a+b = (a+b)\textemdash 0$
 					\end{proposition}
 					这个命题是显然的。
+					
+					接下来我们验证之前自然数的运算现在依旧是成立的。
+					\begin{proposition}
+						$a+b=b+a$
+					\end{proposition}
+					\begin{proof}
+						设$a = (a_1 \textemdash a_2),b=(b_1 \textemdash b_2)$，
+						
+						于是，$a+b = (a_1+b_1 \textemdash a_2+b_2)$
+						
+						$b+a = (b_1+a_1 \textemdash b_2+a_2)$，但是我们已经在自然数集中证明了交换律。
+					\end{proof}
+					\begin{proposition}
+						$(a+b)+c=a+(b+c)$
+					\end{proposition}
+					\begin{proof}
+						设$a = (a_1 \textemdash a_2),b=(b_1 \textemdash b_2),c=(c_1 \textemdash c_2)$，
+						
+						于是，$(a+b)+c = \left((a_1+b_1)+c_1 \textemdash (a_2+b_2)+c_2\right)$
+						
+						$a+(b+c) = \left(a_1+(b_1+c_1) \textemdash a_2+(b_2+c_2)\right)$，但是我们已经在自然数集中证明了结合律。
+					\end{proof}
+					\begin{proposition}
+						$x+0=0+x=x$
+					\end{proposition}
+					\begin{proof}
+						因为已经证明交换律，所以只需证明$x+0=x$，但是这是显然的。
+					\end{proof}
 				\point{整数的乘法}
 					\begin{defn}{整数的乘法}{}
 						我们定义：
@@ -335,6 +363,12 @@
 						
 						同理可证第二条。
 					\end{proof}
+				\point{整数的负}
+					\begin{defn}{整数的负}{}
+						我们定义整数$(a \textemdash b)$的负为：
+						
+						$-(a\textemdash b) := (b\textemdash a)$，记作$-(a\textemdash b)$
+					\end{defn}
 			\end{para}
 		\subsection{有理数集}
 		\subsection{戴德金分割}
