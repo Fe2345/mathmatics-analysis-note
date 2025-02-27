@@ -759,16 +759,6 @@
 					\end{proof}
 				\end{para}
 			\end{para}
-		\subsection{欧拉数}
-	% 附录：欧拉-麦克劳林公式
-	\section{欧拉-麦克劳林公式}
-		我们直观上会认为，一个连续的级数和应该可以用这一整数区间的积分来大致模拟。一些结果也的确呈现了这个特征，比如以下有关调和级数的命题：
-		
-		$\sum\limits_{n=1}^{x} \frac{1}{n} = \int_{1}^{x} \frac{1}{t}\d t +o(1)$
-		
-		特别地，其中的余项有$o(1)\to\varepsilon$,$\varepsilon$为欧拉常数.
-		
-		我们对这里的余项做探讨，探究何时可以积分和求和的差值为常数阶，以及这一余项大小如何。
 		\subsection{伯努利多项式}
 		\begin{para}{0}
 			\point{定义}
@@ -781,113 +771,217 @@
 			\point{性质}
 			\begin{para}{1}
 				\point{}
-					\begin{proposition}
-						$B_n(0)=B_n,B_n(1)=(-1)^{n}B_n$
-					\end{proposition}
-					\begin{proof}
-						 在伯努利多项式的定义中分别代入$0,1$：
-						 
-						 $\frac{z}{e^z-1}=\sum\limits_{n=0}^{\infty} \frac{B_n(0)}{n!}$
-						 
-						 对比伯努利数的定义即得$B_n(0) = B_n$
-						 
-						 $\frac{z e^z}{e^z-1}=\sum\limits_{n=0}^{\infty} \frac{B_n(1)}{n!}z^n$
-						 
-						 $\Rightarrow\frac{z}{1-e^{-z}}=\frac{-z}{e^{-z}-1} = \sum\limits_{n=0}^{\infty} \frac{B_n}{n!}z^n$
-					\end{proof}
+				\begin{proposition}
+					$B_n(0)=B_n,B_n(1)=(-1)^{n}B_n$
+				\end{proposition}
+				\begin{proof}
+					在伯努利多项式的定义中分别代入$0,1$：
+					
+					$\frac{z}{e^z-1}=\sum\limits_{n=0}^{\infty} \frac{B_n(0)}{n!}$
+					
+					对比伯努利数的定义即得$B_n(0) = B_n$
+					
+					$\frac{z e^z}{e^z-1}=\sum\limits_{n=0}^{\infty} \frac{B_n(1)}{n!}z^n$
+					
+					$\Rightarrow\frac{z}{1-e^{-z}}=\frac{-z}{e^{-z}-1} = \sum\limits_{n=0}^{\infty} \frac{B_n}{n!}z^n$
+				\end{proof}
 				\point{}
-					\begin{proposition}
-						$B_n(x) = \sum\limits_{i=0}^{n} \binom{n}{i}B_i x^{n-i}$
-					\end{proposition}
-					\begin{proof}
-						依伯努利数定义，$\frac{z e^{xz}}{e^z-1}=\sum\limits_{k=0}^{\infty} \frac{B_k(x)}{k!}z^k$
-						
-						那么$\frac{z e^{xz}}{e^z-1}=\frac{z}{e^z-1} e^{xz}$
-						
-						$=\sum\limits_{i=0}^{\infty} B_i \frac{z^i}{i!} \cdot \sum\limits_{j=0}^{\infty} \frac{(xz)^j}{j!}$
-						
-						$=\sum\limits_{k=0}^{\infty} \left(\sum\limits_{i=0}^{\infty} B_i \frac{x^i}{i!}\cdot \frac{(xz)^{k-i}}{(k-i)!}\right)$
-						
-						$=\sum\limits_{k=0}^{\infty} \left(\sum\limits_{i=0}^{\infty} \frac{B_i x^{k-i}}{(k-i)!i!}z^k\right)$
-						
-						$=\sum\limits_{k=0}^{\infty} \left(\sum\limits_{i=0}^{\infty} \frac{B_i k!}{(k-i)!i!}x^{k-i}\right) z^k$
-						
-						比较系数即得：$B_n(x) = \sum\limits_{i=0}^{n} \binom{n}{i}B_i x^{n-i}$。
-					\end{proof}
+				\begin{proposition}
+					$B_n(x) = \sum\limits_{i=0}^{n} \binom{n}{i}B_i x^{n-i}$
+				\end{proposition}
+				\begin{proof}
+					依伯努利数定义，$\frac{z e^{xz}}{e^z-1}=\sum\limits_{k=0}^{\infty} \frac{B_k(x)}{k!}z^k$
+					
+					那么$\frac{z e^{xz}}{e^z-1}=\frac{z}{e^z-1} e^{xz}$
+					
+					$=\sum\limits_{i=0}^{\infty} B_i \frac{z^i}{i!} \cdot \sum\limits_{j=0}^{\infty} \frac{(xz)^j}{j!}$
+					
+					$=\sum\limits_{k=0}^{\infty} \left(\sum\limits_{i=0}^{\infty} B_i \frac{x^i}{i!}\cdot \frac{(xz)^{k-i}}{(k-i)!}\right)$
+					
+					$=\sum\limits_{k=0}^{\infty} \left(\sum\limits_{i=0}^{\infty} \frac{B_i x^{k-i}}{(k-i)!i!}z^k\right)$
+					
+					$=\sum\limits_{k=0}^{\infty} \left(\sum\limits_{i=0}^{\infty} \frac{B_i k!}{(k-i)!i!}x^{k-i}\right) z^k$
+					
+					比较系数即得：$B_n(x) = \sum\limits_{i=0}^{n} \binom{n}{i}B_i x^{n-i}$。
+				\end{proof}
 				\point{}
-					\begin{proposition}
-						$B_n^{\prime} (x) = n B_{n-1} (x)$
-					\end{proposition}
-					\begin{proof}
-						依伯努利数定义：$\frac{z e^{xz}}{e^z-1} = \sum\limits_{n=0}^{\infty} \frac{B_n(x)}{n!}z^n$
-						
-						对两侧求对x的导数得：$\frac{z^2 e^{xz}}{e^z-1} = \sum\limits_{n=1}^{\infty} \frac{B_n^{\prime}(x)}{n!}z^n$
-						
-						此处把求和下限调整为1是因为注意到，级数在$i=0$时为常数，因此此项导数为0。
-						
-						两侧同除z得：$\frac{z e^{xz}}{e^z-1} = \sum\limits_{n=1}^{\infty} \frac{B_n^{\prime}(x)}{n!}z^{n-1}$
-						
-						$=\sum\limits_{n=0}^{\infty} \frac{B_{n+1}^{\prime}(x)}{(n+1)!}z^{n}$
-						
-						$=\sum\limits_{n=0}^{\infty} \frac{B_{n+1}^{\prime}(x)}{(n+1)\cdot n!}z^{n}$
-						
-						对比系数得：$B_n(x) = \frac{B_{n+1}^{\prime}(x)}{n+1}$，于是命题得证。
-					\end{proof}
+				\begin{proposition}
+					$B_n^{\prime} (x) = n B_{n-1} (x)$
+				\end{proposition}
+				\begin{proof}
+					依伯努利数定义：$\frac{z e^{xz}}{e^z-1} = \sum\limits_{n=0}^{\infty} \frac{B_n(x)}{n!}z^n$
+					
+					对两侧求对x的导数得：$\frac{z^2 e^{xz}}{e^z-1} = \sum\limits_{n=1}^{\infty} \frac{B_n^{\prime}(x)}{n!}z^n$
+					
+					此处把求和下限调整为1是因为注意到，级数在$i=0$时为常数，因此此项导数为0。
+					
+					两侧同除z得：$\frac{z e^{xz}}{e^z-1} = \sum\limits_{n=1}^{\infty} \frac{B_n^{\prime}(x)}{n!}z^{n-1}$
+					
+					$=\sum\limits_{n=0}^{\infty} \frac{B_{n+1}^{\prime}(x)}{(n+1)!}z^{n}$
+					
+					$=\sum\limits_{n=0}^{\infty} \frac{B_{n+1}^{\prime}(x)}{(n+1)\cdot n!}z^{n}$
+					
+					对比系数得：$B_n(x) = \frac{B_{n+1}^{\prime}(x)}{n+1}$，于是命题得证。
+				\end{proof}
 				\point{}
-					\begin{proposition}
-						$\int_{0}^{1} B_n (x) \d x = 0 ,n \geqslant 1$
-					\end{proposition}
-					\begin{proof}
-						利用上面给出的导数性质：
-						
-						$\int_{0}^{1} B_n (x) \d x = \frac{B_{n+1}(x)}{n+1} \bigg|_{0}^{1} = \frac{1}{n+1}\left(B_{n+1}(1)-B_n(0)\right)$
-						
-						那么只需要注意到，当$n\geqslant 2$，如果$n$为偶，按前面的断言有$B_n(1)=B_n=B_n(0)$；而如果$n$为奇，那么$B_n(1) = B_n(0) = B_n = 0$，于是命题得证。
-					\end{proof}
+				\begin{proposition}
+					$\int_{0}^{1} B_n (x) \d x = 0 ,n \geqslant 1$
+				\end{proposition}
+				\begin{proof}
+					利用上面给出的导数性质：
+					
+					$\int_{0}^{1} B_n (x) \d x = \frac{B_{n+1}(x)}{n+1} \bigg|_{0}^{1} = \frac{1}{n+1}\left(B_{n+1}(1)-B_n(0)\right)$
+					
+					那么只需要注意到，当$n\geqslant 2$，如果$n$为偶，按前面的断言有$B_n(1)=B_n=B_n(0)$；而如果$n$为奇，那么$B_n(1) = B_n(0) = B_n = 0$，于是命题得证。
+				\end{proof}
 				\point{}
-					\begin{proposition}
-						$B_n (x+1)-B_n (x) = nx^{n-1}$
-					\end{proposition}
-					\begin{proof}
-						考虑构造与伯努利多项式生成函数类似的级数：
-						
-						$\sum\limits_{n=0}^{\infty} \left(B_n(x+1)-B_n(x)\right) \frac{x^n}{n!}$
-						
-						$=\sum\limits_{n=0}^{\infty} B_n(x+1) \frac{x^n}{n!}-\sum\limits_{n=0}^{\infty} B_n(x) \frac{x^n}{n!}$
-						
-						$=\frac{z e^{(x+1)z}}{e^z-1}-\frac{z e^{xz}}{e^z-1}$
-						
-						$=\frac{z e^{xz} (e^z-1)}{e^z-1} = z e^{xz}$
-						
-						$=\sum\limits_{n=0}^{\infty} x^n \frac{z^{n+1}}{n!}$
-						
-						$=\sum\limits_{n=0}^{\infty} (n+1)x^n \frac{z^{n+1}}{(n+1)!}$
-						
-						$=\sum\limits_{n=1}^{\infty} n x^n \frac{z^{n}}{(n)!}$
-						
-						$=\sum\limits_{n=0}^{\infty} n x^n \frac{z^{n}}{(n)!}$，因为此级数的$n=0$项为0。
-						
-						于是对比系数即得证。
-					\end{proof}
+				\begin{proposition}
+					$B_n (x+1)-B_n (x) = nx^{n-1}$
+				\end{proposition}
+				\begin{proof}
+					考虑构造与伯努利多项式生成函数类似的级数：
+					
+					$\sum\limits_{n=0}^{\infty} \left(B_n(x+1)-B_n(x)\right) \frac{x^n}{n!}$
+					
+					$=\sum\limits_{n=0}^{\infty} B_n(x+1) \frac{x^n}{n!}-\sum\limits_{n=0}^{\infty} B_n(x) \frac{x^n}{n!}$
+					
+					$=\frac{z e^{(x+1)z}}{e^z-1}-\frac{z e^{xz}}{e^z-1}$
+					
+					$=\frac{z e^{xz} (e^z-1)}{e^z-1} = z e^{xz}$
+					
+					$=\sum\limits_{n=0}^{\infty} x^n \frac{z^{n+1}}{n!}$
+					
+					$=\sum\limits_{n=0}^{\infty} (n+1)x^n \frac{z^{n+1}}{(n+1)!}$
+					
+					$=\sum\limits_{n=1}^{\infty} n x^n \frac{z^{n}}{(n)!}$
+					
+					$=\sum\limits_{n=0}^{\infty} n x^n \frac{z^{n}}{(n)!}$，因为此级数的$n=0$项为0。
+					
+					于是对比系数即得证。
+				\end{proof}
 				\point{}
-					\begin{proposition}
-						$B_n (1-x) = (-1)^n B_n(x)$
-					\end{proposition}
-					\begin{proof}
-						考虑以下级数：
-						
-						$\sum\limits_{n=0}^{\infty} (-1)^n B_n(x) \frac{z^n}{n!}$
-						
-						$=\sum\limits_{n=0}^{\infty} B_n(x) \frac{(-z)^n}{n!}$
-						
-						$=\frac{-z e^{-xz}}{e^{-z}-1}$
-						
-						上下同乘$-e^z$，$=\frac{z e^{(1-x)z}}{e^z-1}$
-						
-						$=\sum\limits_{n=0}^{\infty} B_n(1-x) \frac{z^n}{n!}$，于是命题得证
-					\end{proof}
+				\begin{proposition}
+					$B_n (1-x) = (-1)^n B_n(x)$
+				\end{proposition}
+				\begin{proof}
+					考虑以下级数：
+					
+					$\sum\limits_{n=0}^{\infty} (-1)^n B_n(x) \frac{z^n}{n!}$
+					
+					$=\sum\limits_{n=0}^{\infty} B_n(x) \frac{(-z)^n}{n!}$
+					
+					$=\frac{-z e^{-xz}}{e^{-z}-1}$
+					
+					上下同乘$-e^z$，$=\frac{z e^{(1-x)z}}{e^z-1}$
+					
+					$=\sum\limits_{n=0}^{\infty} B_n(1-x) \frac{z^n}{n!}$，于是命题得证
+				\end{proof}
 			\end{para}
 		\end{para}
+		\subsection{欧拉数}
+			\begin{para}{0}
+				\point{定义}
+					\begin{defn}{欧拉数}
+						符合以下级数展开的数列称为伯努利数：
+						\begin{equation}
+							\frac{2}{e^x +e^{-x}} = \sum_{n=0}^{\infty}\frac{E_n}{n!}x^n
+						\end{equation}
+					\end{defn}
+			\end{para}
+	%附录：其他四种三角函数的泰勒展开
+	\section{其他四种三角函数的泰勒/洛朗展开}
+	\subsection{$\cot x$}
+	借助伯努利数或者Gamma函数，分别可以将余切分解为两种形式
+	\begin{them}{余切函数的洛朗展开}{}
+		\begin{equation}
+			\cot x = \sum\limits_{n=0}^{\infty}\frac{2(-1)^n B_{2n} (2x)^{2n-1}}{(2n)!}
+		\end{equation}
+		这一展开是$\cot x$的洛朗展开而非泰勒展开，因为$\cot x \sim \frac{1}{x},x\to 0$，在0处不解析
+	\end{them}
+	\begin{proof}
+		依余切函数定义：
+		$\cot x = \frac{i(e^{ix}+e^{-ix})}{e^{ix}-e^{-ix}}$
+		
+		$=i\frac{e^{2ix}+1}{e^{2ix}-1}$
+		
+		$=i\left(1+\frac{2}{e^{2ix}-1}\right)$
+		再利用伯努利数的级数定义：
+		
+		$\cot x = i+2i\cdot \frac{1}{2ix} \sum\limits_{n=0}^{\infty} \frac{B_n (2ix)^n}{n!}$
+		
+		$\cot x = i+2i\sum\limits_{n=0}^{\infty} \frac{B_n (2ix)^{n-1}}{n!}$
+		因为伯努利数的奇数项只有$B_1=-\frac{1}{2}$，其余全为0，故：
+		
+		$\cot x = i+2i\left(\sum_{n=0}^{\infty} \frac{B_2n (2ix)^2n-1}{2n!} -\frac{1}{2}\right)$
+		
+		$=\sum\limits_{n=0}^{\infty} \frac{2 B_{2n} (i)^{2n} (2x)^{2n-1}}{2n!}$
+		$=\sum\limits_{n=0}^{\infty}\frac{2(-1)^n B_{2n} (2x)^{2n-1}}{(2n)!}$
+	\end{proof}
+	\begin{them}{余切函数的第二种级数展开}{}
+		\begin{equation}
+			\cot z = \frac{1}{z}+\sum\limits_{n=0}^{\infty} \left(\frac{1}{z-n\pi}+\frac{1}{z+n\pi}\right)
+		\end{equation}
+	\end{them}
+	\begin{proof}
+		利用正弦函数的无穷乘积展开式：
+		
+		$\sin \pi z = \pi z \prod\limits_{n=1}^{\infty} \left(1-\frac{z^2}{n^2}\right)$
+		
+		将$\pi z$移至左侧并取对数，得：
+		
+		$\ln \frac{\sin \pi z}{\pi z} = \sum\limits_{n=1}^{\infty} \ln \left(1-\frac{z^2}{n^2}\right)$
+		
+		双侧求导，得：
+		
+		$\frac{\pi z}{\sin \pi z}\left(\frac{\cos \pi z}{z}-\frac{\sin \pi z}{\pi z^2}\right) = \sum\limits_{n=1}^{\infty} \frac{-2z}{n^2 (1-\frac{z^2}{n^2})}$
+		
+		进行一些基本运算并对级数内部裂项，得：
+		
+		$\pi \cot \pi z = \frac{1}{z}+\sum\limits_{n=1}^{\infty}\left(\frac{1}{z-n}+\frac{1}{z+n}\right)$
+		
+		$\Rightarrow \cot \pi z = \frac{1}{\pi z}+\sum\limits_{n=1}^{\infty}\left(\frac{1}{\pi z-\pi n}+\frac{1}{\pi z+\pi n}\right)$
+		
+		$\Rightarrow \cot z = \frac{1}{z}+\sum\limits_{n=0}^{\infty} \left(\frac{1}{z-n\pi}+\frac{1}{z+n\pi}\right)$
+	\end{proof}
+	这一证明的注意力很强，其整体思路是：将$\cot$转换为$\cos$和$\sin$的除法，再利用正弦函数的导数，构造相应的对数除式，而恰好注意到，$\sin z$的无穷乘积展开正适合构造对数求和。
+	\subsection{$\tan x$}
+	\begin{them}{正切函数的Taylor展开}{}
+		\begin{equation}
+			\tan x = \sum\limits_{n=1}^{\infty} \frac{(-1)^{n-1}2^{2n}(2^{2n}-1)B_{2n}}{(2n)!}x^{2n-1}
+		\end{equation}
+	\end{them}
+	\begin{proof}
+		注意到：$\cot x = -2 \cot 2x +\cot x$
+		
+		因为：$-2\cot 2x+\cot x = -2\frac{\cos 2x}{\sin 2x}+\frac{\cos x}{\sin x}$
+		
+		$=-\frac{\cos^2 x-\sin^2 x}{\sin x\cos x}+\frac{\cos x}{\sin x}$
+		
+		$=\frac{\sin^2 x-\cos^2 x}{\sin x\cos x}+\frac{\cos^2 x}{\sin x\cos x}$
+		
+		$=\frac{\sin^2 x}{\sin x\cos x}$
+		
+		$=\frac{\sin x}{\cos x}=\cot x$
+		
+		$\therefore \cot x = -2\sum\limits_{n=0}^{\infty}\frac{2(-1)^n B_{2n} (4x)^{2n-1}}{(2n)!}+\sum\limits_{n=0}^{\infty}\frac{2(-1)^n B_{2n} (2x)^{2n-1}}{(2n)!} $
+		
+		$=-\sum\limits_{n=0}^{\infty}\frac{2(-1)^n B_{2n} (1-2^{2n}) (2x)^{2n-1}}{(2n)!}$
+		
+		$=\sum\limits_{n=0}^{\infty}\frac{(-1)^{n-1} B_{2n} 2^{2n}(2^{2n}-1) x^{2n-1}}{(2n)!}$
+		
+		又当$n=0$时一般项为0，
+		
+		$\therefore \cot x = \sum\limits_{n=1}^{\infty}\frac{(-1)^{n-1} 2^{2n}(2^{2n}-1) B_{2n}}{(2n)!}  x^{2n-1}$
+	\end{proof}
+	% 附录：欧拉-麦克劳林公式
+	\section{欧拉-麦克劳林公式}
+		我们直观上会认为，一个连续的级数和应该可以用这一整数区间的积分来大致模拟。一些结果也的确呈现了这个特征，比如以下有关调和级数的命题：
+		
+		$\sum\limits_{n=1}^{x} \frac{1}{n} = \int_{1}^{x} \frac{1}{t}\d t +o(1)$
+		
+		特别地，其中的余项有$o(1)\to\varepsilon$,$\varepsilon$为欧拉常数.
+		
+		我们对这里的余项做探讨，探究何时可以积分和求和的差值为常数阶，以及这一余项大小如何。
 		\begin{them}{欧拉-麦克劳林公式}{}
 			假设$f(x)$无穷阶可导，那么：
 			\begin{equation}
@@ -895,95 +989,6 @@
 			\end{equation}
 			
 		\end{them}
-	
-	%附录：其他四种三角函数的泰勒展开
-	\section{其他四种三角函数的泰勒/洛朗展开}
-		\subsection{$\cot x$}
-			借助伯努利数或者Gamma函数，分别可以将余切分解为两种形式
-			\begin{them}{余切函数的洛朗展开}{}
-				\begin{equation}
-					\cot x = \sum\limits_{n=0}^{\infty}\frac{2(-1)^n B_{2n} (2x)^{2n-1}}{(2n)!}
-				\end{equation}
-				这一展开是$\cot x$的洛朗展开而非泰勒展开，因为$\cot x \sim \frac{1}{x},x\to 0$，在0处不解析
-			\end{them}
-			\begin{proof}
-				依余切函数定义：
-				$\cot x = \frac{i(e^{ix}+e^{-ix})}{e^{ix}-e^{-ix}}$
-				
-				$=i\frac{e^{2ix}+1}{e^{2ix}-1}$
-				
-				$=i\left(1+\frac{2}{e^{2ix}-1}\right)$
-				再利用伯努利数的级数定义：
-				
-				$\cot x = i+2i\cdot \frac{1}{2ix} \sum\limits_{n=0}^{\infty} \frac{B_n (2ix)^n}{n!}$
-				
-				$\cot x = i+2i\sum\limits_{n=0}^{\infty} \frac{B_n (2ix)^{n-1}}{n!}$
-				因为伯努利数的奇数项只有$B_1=-\frac{1}{2}$，其余全为0，故：
-				
-				$\cot x = i+2i\left(\sum_{n=0}^{\infty} \frac{B_2n (2ix)^2n-1}{2n!} -\frac{1}{2}\right)$
-				
-				$=\sum\limits_{n=0}^{\infty} \frac{2 B_{2n} (i)^{2n} (2x)^{2n-1}}{2n!}$
-				$=\sum\limits_{n=0}^{\infty}\frac{2(-1)^n B_{2n} (2x)^{2n-1}}{(2n)!}$
-			\end{proof}
-			\begin{them}{余切函数的第二种级数展开}{}
-				\begin{equation}
-					\cot z = \frac{1}{z}+\sum\limits_{n=0}^{\infty} \left(\frac{1}{z-n\pi}+\frac{1}{z+n\pi}\right)
-				\end{equation}
-			\end{them}
-			\begin{proof}
-				利用正弦函数的无穷乘积展开式：
-				
-				$\sin \pi z = \pi z \prod\limits_{n=1}^{\infty} \left(1-\frac{z^2}{n^2}\right)$
-				
-				将$\pi z$移至左侧并取对数，得：
-				
-				$\ln \frac{\sin \pi z}{\pi z} = \sum\limits_{n=1}^{\infty} \ln \left(1-\frac{z^2}{n^2}\right)$
-				
-				双侧求导，得：
-				
-				$\frac{\pi z}{\sin \pi z}\left(\frac{\cos \pi z}{z}-\frac{\sin \pi z}{\pi z^2}\right) = \sum\limits_{n=1}^{\infty} \frac{-2z}{n^2 (1-\frac{z^2}{n^2})}$
-				
-				进行一些基本运算并对级数内部裂项，得：
-				
-				$\pi \cot \pi z = \frac{1}{z}+\sum\limits_{n=1}^{\infty}\left(\frac{1}{z-n}+\frac{1}{z+n}\right)$
-				
-				$\Rightarrow \cot \pi z = \frac{1}{\pi z}+\sum\limits_{n=1}^{\infty}\left(\frac{1}{\pi z-\pi n}+\frac{1}{\pi z+\pi n}\right)$
-				
-				$\Rightarrow \cot z = \frac{1}{z}+\sum\limits_{n=0}^{\infty} \left(\frac{1}{z-n\pi}+\frac{1}{z+n\pi}\right)$
-			\end{proof}
-			这一证明的注意力很强，其整体思路是：将$\cot$转换为$\cos$和$\sin$的除法，再利用正弦函数的导数，构造相应的对数除式，而恰好注意到，$\sin z$的无穷乘积展开正适合构造对数求和。
-		\subsection{$\tan x$}
-			\begin{them}{正切函数的Taylor展开}{}
-				\begin{equation}
-					\tan x = \sum\limits_{n=1}^{\infty} \frac{(-1)^{n-1}2^{2n}(2^{2n}-1)B_{2n}}{(2n)!}x^{2n-1}
-				\end{equation}
-			\end{them}
-			\begin{proof}
-				注意到：$\cot x = -2 \cot 2x +\cot x$
-				
-				因为：$-2\cot 2x+\cot x = -2\frac{\cos 2x}{\sin 2x}+\frac{\cos x}{\sin x}$
-				
-				$=-\frac{\cos^2 x-\sin^2 x}{\sin x\cos x}+\frac{\cos x}{\sin x}$
-				
-				$=\frac{\sin^2 x-\cos^2 x}{\sin x\cos x}+\frac{\cos^2 x}{\sin x\cos x}$
-				
-				$=\frac{\sin^2 x}{\sin x\cos x}$
-				
-				$=\frac{\sin x}{\cos x}=\cot x$
-				
-				$\therefore \cot x = -2\sum\limits_{n=0}^{\infty}\frac{2(-1)^n B_{2n} (4x)^{2n-1}}{(2n)!}+\sum\limits_{n=0}^{\infty}\frac{2(-1)^n B_{2n} (2x)^{2n-1}}{(2n)!} $
-				
-				$=-\sum\limits_{n=0}^{\infty}\frac{2(-1)^n B_{2n} (1-2^{2n}) (2x)^{2n-1}}{(2n)!}$
-				
-				$=\sum\limits_{n=0}^{\infty}\frac{(-1)^{n-1} B_{2n} 2^{2n}(2^{2n}-1) x^{2n-1}}{(2n)!}$
-				
-				又当$n=0$时一般项为0，
-				
-				$\therefore \cot x = \sum\limits_{n=1}^{\infty}\frac{(-1)^{n-1} 2^{2n}(2^{2n}-1) B_{2n}}{(2n)!}  x^{2n-1}$
-			\end{proof}
-			\begin{proof}
-				怎么开始套娃了（恼）
-			\end{proof}
 	
 	%附录：不定积分初等性判定
 	\section{原函数初等性的判定方法}
